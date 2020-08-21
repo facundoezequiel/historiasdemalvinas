@@ -12,10 +12,6 @@ export default function Home() {
     <HomeContainer>
       <HomeSearch />
       <HomeVideo />
-      <HomePlanet />
-      <Planet3D />
-      <HomeDonarPrices />
-      <HomeGrid />
     </HomeContainer>
   );
 }

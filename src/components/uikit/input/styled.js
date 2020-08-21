@@ -1,21 +1,22 @@
 import styled, { css } from "styled-components";
 
+/* Principal Container */
 const InputIconContainer = styled.div`
   margin: 0 0 0 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
-  /* Home search */
+  /* Props principal container */
   ${(props) =>
     props.design === "searchHome" &&
     css`
-      width: 73%;
-      margin-top: 5% !important;
-      margin-left: 0% !important;
+      width: 70%;
+      margin: 0 auto !important;
     `}
 `;
 
+/* Icon container */
 const IconContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -25,20 +26,21 @@ const IconContainer = styled.div`
   border-radius: 8px 0px 0px 8px;
   -moz-border-radius: 8px 0px 0px 8px;
   -webkit-border-radius: 8px 0px 0px 8px;
-  background-color: #d8dfe1;
+  background-color: var(--gray);
   color: #818689;
   margin: 8% 0% 0% 0%;
   font-size: 1.1em;
 
-  /* Home search */
+  /* Props icon container */
   ${(props) =>
     props.design === "searchHome" &&
     css`
       margin-top: 0% !important;
-      padding: 3.3% 4% 3.3% 4%;
+      padding: 2.9% 3.5% 2.9% 3.5%;
     `}
 `;
 
+/* Input container */
 const InputContainer = styled.input`
   width: 82%;
   padding: 4.2% 4% 4.2% 0% !important;
@@ -46,13 +48,13 @@ const InputContainer = styled.input`
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   outline: none !important;
-  background-color: var(--inputgray);
+  background-color: var(--gray);
   margin: 8% 0% 0% 0%;
   border-radius: 0px 8px 8px 0px;
   -moz-border-radius: 0px 8px 8px 0px;
   -webkit-border-radius: 0px 8px 8px 0px;
-  font-family: var(--proximasoft);
-  font-size: 0.9em;
+  font-family: var(--inter);
+  font-size: 1em;
   color: var(--inputgrayfont);
 
   ::placeholder {
@@ -62,13 +64,13 @@ const InputContainer = styled.input`
   :valid {
     color: var(--inputgrayfont);
 
-    /* Home search */
+    /* Props input container */
     ${(props) =>
       props.design === "searchHome" &&
       css`
         width: 84%;
         margin-top: 0% !important;
-        padding: 2.8% 4% 2.8% 0% !important;
+        padding: 2.8% 3% 2.8% 0% !important;
       `}
   }
 `;

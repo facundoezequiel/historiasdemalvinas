@@ -12,7 +12,7 @@ export default function Planet3D() {
       city: "Islas Malvinas (Colonia Británica)",
       color: "orange",
       coordinates: [-50.0, -59.523613],
-      value: 200,
+      value: 197,
     },
     {
       id: "argentina",
@@ -26,14 +26,14 @@ export default function Planet3D() {
       city: "Islas Georgias del Sur (Colonia Británica)",
       color: "orange",
       coordinates: [-52.429579, -36.587909],
-      value: 200,
+      value: 197,
     },
     {
       id: "sandwich",
       city: "Islas Sandwich del Sur (Colonia Británica)",
       color: "orange",
       coordinates: [-55.75, -26.5],
-      value: 200,
+      value: 197,
     },
     {
       id: "libia",
@@ -342,15 +342,15 @@ export default function Planet3D() {
     ambientLightColor: "white",
     cameraRotateSpeed: 0.5,
     cameraAutoRotateSpeed: 0.4,
-    focusAnimation: 0,
+    focusAnimation: 1000,
     focusEasingFunction: ["Cubic", "Out"],
     enableMarkerGlow: true,
     pointLightColor: "white",
     pointLightIntensity: 0.3,
-    globeGlowColor: "transparent",
+    globeGlowColor: "white",
     enableCameraZoom: false,
     cameraMaxDistanceRadiusScale: 3,
-    focusDistanceRadiusScale: 3,
+    focusDistanceRadiusScale: 1.5,
     markerEnterAnimationDuration: 1000,
     markerEnterEasingFunction: ["Linear", "None"],
     markerExitAnimationDuration: 500,
@@ -360,6 +360,7 @@ export default function Planet3D() {
 
   return (
     <Planet3DContainer>
+      <ParticlesBackground />
       <ReactGlobe
         height="700px"
         width="100%"
@@ -367,7 +368,7 @@ export default function Planet3D() {
         options={options}
         globeCloudsTexture={null}
         initialCoordinates={[-20.3521, -45.8198]}
-        globeTexture="https://assets.vercel.com/image/upload/v1595320886/front/home/globe-texture.jpg"
+        globeTexture="./assets/images/maps/map2.jpg"
         globeBackgroundTexture={null}
       />
     </Planet3DContainer>

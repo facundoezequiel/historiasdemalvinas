@@ -1,48 +1,75 @@
 import styled, { css } from "styled-components";
 
+/* Principal container */
 const ButtonContainer = styled.button`
   width: 70%;
-  border-radius: 200px 200px 200px 200px;
-  -moz-border-radius: 200px 200px 200px 200px;
-  -webkit-border-radius: 200px 200px 200px 200px;
+  border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -webkit-border-radius: 7px 7px 7px 7px;
   border: 0px solid #000000;
   cursor: pointer;
-  font-family: var(--proximasoft);
+  font-family: var(--inter);
   font-weight: 600;
   padding: 3.7% 0% 3.7% 0%;
   color: var(--white);
   background-color: var(--orange);
   letter-spacing: 0.07em;
-  font-size: 0.85em;
+  font-size: 0.8em;
   margin-top: 6%;
-  transition: 0.2s;
+  transition: all 0.2s;
 
   :hover {
-    background-color: var(--inputgray);
-    color: var(--inputgrayfont);
+    transform: scale(1.07);
   }
 
+  /* Props principal container */
+  /* Color props */
   ${(props) =>
     props.backgroundColor === "blue" &&
     css`
-      background-color: var(--blue);
+      background: #105cff;
+      background: -moz-linear-gradient(45deg, #105cff 0%, #05cdff 100%);
+      background: -webkit-gradient(
+        left bottom,
+        right top,
+        color-stop(0%, #105cff),
+        color-stop(100%, #05cdff)
+      );
+      background: -webkit-linear-gradient(45deg, #105cff 0%, #05cdff 100%);
+      background: -o-linear-gradient(45deg, #105cff 0%, #05cdff 100%);
+      background: -ms-linear-gradient(45deg, #105cff 0%, #05cdff 100%);
+      background: linear-gradient(45deg, #105cff 0%, #05cdff 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#105cff', endColorstr='#05cdff', GradientType=1 );
       color: var(--white);
     `}
 
   ${(props) =>
     props.backgroundColor === "orange" &&
     css`
-      background-color: var(--orange);
+      background: #ff6a00;
+      background: -moz-linear-gradient(45deg, #ff6a00 0%, #ffbb00 100%);
+      background: -webkit-gradient(
+        left bottom,
+        right top,
+        color-stop(0%, #ff6a00),
+        color-stop(100%, #ffbb00)
+      );
+      background: -webkit-linear-gradient(45deg, #ff6a00 0%, #ffbb00 100%);
+      background: -o-linear-gradient(45deg, #ff6a00 0%, #ffbb00 100%);
+      background: -ms-linear-gradient(45deg, #ff6a00 0%, #ffbb00 100%);
+      background: linear-gradient(45deg, #ff6a00 0%, #ffbb00 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6a00', endColorstr='#ffbb00', GradientType=1 );
       color: var(--white);
     `}
 
+    /* Size props */
     ${(props) =>
       props.design === "homeSearch" &&
       css`
         width: 23%;
-        margin-right: 5%;
-        margin-left: 0% !important;
-        padding: 1.5% 0% 1.5% 0%;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+        padding: 2.5% 1.5% 2.5% 1.5%;
       `}
 
     ${(props) =>
