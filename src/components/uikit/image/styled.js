@@ -42,8 +42,17 @@ const ImageContainer = styled.img`
     ${(props) =>
       props.size === "10" &&
       css`
-        width: 10%;
         display: block;
+        object-fit: contain;
+        width: 10%;
+      `}
+
+    ${(props) =>
+      props.size === "13" &&
+      css`
+        display: block;
+        object-fit: contain;
+        width: 13%;
       `}
 
     ${(props) =>

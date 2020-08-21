@@ -1,7 +1,7 @@
 const Color = require("color-js");
 
 const Colors = {
-  black: Color("#4F6465"),
+  black: Color("#000000"),
   white: Color("#ffffff"),
   orange: Color("#FF6B00"),
   blue: Color("#105AFF"),

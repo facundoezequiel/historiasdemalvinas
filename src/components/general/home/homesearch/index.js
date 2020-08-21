@@ -2,35 +2,36 @@ import React from "react";
 import { HomeSearchContainer } from "./styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import Logo from "./../../../uikit/logo";
 import Title from "./../../../uikit/title";
-import Image from "./../../../uikit/image";
 import Paragraph from "./../../../uikit/paragraph";
 import Input from "../../../uikit/input";
 import Button from "../../../uikit/button";
+import ReactTyped from "react-typed";
 
 export default function HomeSearch() {
   return (
     <HomeSearchContainer>
-      <div className="searchCoverContainer">
-        <div className="searchDiv">
-          <Logo imageLink="./assets/logos/IsologoDedicadoNegro.svg" size="12" />
-          <Title level={3} texto="Bienvenido a"></Title>
-          <Title level={1} texto="Historias de Malvinas"></Title>
-          <Paragraph
-            size="0.9"
-            text="Historias de Malvinas, es repositorio web participativo sin animo 
-              de lucro, sobre historias y sucesos que transcurrieron en las Islas Malvinas 
-              e Islas del Atlántico Sur, con la misión de no olvidar que las Malvinas, 
-              son Argentinas."
-          ></Paragraph>
+      <div className="searchDiv">
+        <div className="titleType">
+          <Title level={1} texto="Historias de"></Title>
+          <ReactTyped
+            strings={["Malvinas.", "argentinos.", "heroes."]}
+            typeSpeed={50}
+            backSpeed={50}
+            backDelay={3500}
+            showCursor={false}
+            loop
+            smartBackspace
+          />
+        </div>
+        <div className="searchInput">
           <Input
             type="text"
             icon={<FontAwesomeIcon icon={faSearch} />}
             text="Buscar en Historias de Malvinas"
             design="searchHome"
           ></Input>
-          <div>
+          <div className="buttonsSearch">
             <Button
               text="Conocer más"
               backgroundColor="orange"
@@ -42,25 +43,10 @@ export default function HomeSearch() {
               design="homeSearch"
             ></Button>
           </div>
-          <Logo imageLink="./assets/logos/ScrollMouse.svg" size="4"></Logo>
-        </div>
-        <div className="coverImageDiv">
-          <Image
-            imageLink="./assets/images/home/RamonLopez.png"
-            design="coverHome"
-            size="95.7"
-          ></Image>
-          <div>
-            <Logo
-              imageLink="./assets/logos/IsologoCruzNaranja.svg"
-              size="9"
-            ></Logo>
-            <Paragraph
-              size="0.8"
-              text="Veterano Ramón López Medalla de Honor en Combate. Actualmente 
-                vive en Tierra del Fuego Antártida e Islas del Atlántico Sur"
-            ></Paragraph>
-          </div>
+          <Paragraph
+            size="0.9"
+            text="Repositorio web participativo sin fines de lucro"
+          ></Paragraph>
         </div>
       </div>
     </HomeSearchContainer>

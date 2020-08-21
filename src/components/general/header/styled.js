@@ -6,7 +6,7 @@ const HeaderContainer = styled.div`
   top: 0 !important;
   z-index: 99;
   backdrop-filter: saturate(180%) blur(10px);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
 
   div {
     width: 70%;

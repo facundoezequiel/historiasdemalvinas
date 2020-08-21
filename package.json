@@ -21,6 +21,7 @@
     "react-player": "^2.6.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
+    "react-typed": "^1.2.0",
     "styled-components": "^5.1.1",
     "three": "^0.119.1",
     "three.js": "^0.77.1",

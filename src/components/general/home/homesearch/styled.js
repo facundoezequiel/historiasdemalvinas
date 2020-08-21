@@ -1,92 +1,92 @@
 import styled from "styled-components";
-import backgroundMap from "./BackgroundMap.png";
 
+/* Principal container */
 const HomeSearchContainer = styled.section`
   width: 100%;
-  height: 100vh;
-  background-color: var(--greenlight);
-  background-image: url(${backgroundMap});
-  background-size: cover;
-  background-position: center;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray);
 
-  * {
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-  }
-
-  .searchCoverContainer {
+  /* Secundary container */
+  .searchDiv {
     width: 70%;
     margin: 0 auto;
-    padding-top: 11%;
+  }
+
+  /* Title container */
+  .titleType {
     display: flex;
-    justify-content: space-between;
-  }
-
-  .searchDiv {
-    width: 50%;
-  }
-
-  .searchDiv img {
-    margin-top: 2%;
-  }
-
-  .searchDiv div {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .searchDiv div button {
-    margin-bottom: 5%;
-  }
-
-  .coverImageDiv div {
-    position: absolute !important;
-    width: 28%;
-    top: 0;
-    left: 0;
-    margin-top: 20%;
-  }
-
-  .coverImageDiv div img {
-    display: block;
-    margin-left: 91%;
-    margin-bottom: 5%;
-  }
-
-  .coverImageDiv div p {
-    line-height: 22px !important;
-    color: var(--orange);
-    text-align: right;
     width: 100%;
+    padding-top: 10%;
+    padding-bottom: 4%;
+    flex-wrap: wrap;
+    height: 337px !important;
+    min-height: 337px !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
-  h3 {
-    margin-top: 6%;
-    width: 100%;
-    font-weight: 400;
-    color: var(--black);
-  }
-
+  /* Title "Historias de" */
   h1 {
     width: 100%;
-    margin-top: 1%;
-    font-weight: 700;
-    color: var(--black);
+    font-weight: 800;
+    color: #000000;
+    text-align: center;
+    font-size: 8em;
+    font-family: var(--inter);
+    vertical-align: bottom;
   }
 
-  .searchDiv p {
-    width: 75%;
-    margin-top: 4%;
+  /* Title "Malvinas, argentinos, heroes" */
+  span {
+    width: 100%;
+    font-weight: 800;
+    background: #105cff;
+    background: -moz-linear-gradient(45deg, #105cff 0%, #00fbff 100%);
+    background: -webkit-gradient(
+      left bottom,
+      right top,
+      color-stop(0%, #105cff),
+      color-stop(100%, #00fbff)
+    );
+    background: -webkit-linear-gradient(45deg, #105cff 0%, #00fbff 100%);
+    background: -o-linear-gradient(45deg, #105cff 0%, #00fbff 100%);
+    background: -ms-linear-gradient(45deg, #105cff 0%, #00fbff 100%);
+    background: linear-gradient(45deg, #105cff 0%, #00fbff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#105cff', endColorstr='#00fbff', GradientType=1 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 2.9em;
+    font-family: var(--inter);
   }
 
-  .coverImageDiv {
+  /* Input and buttons container */
+  .searchInput {
+    width: 70%;
+    margin: 0 auto;
     display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Buttons container */
+  .buttonsSearch {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center !important;
+  }
+
+  /* Paragraph */
+  p {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 9%;
   }
 `;
 
