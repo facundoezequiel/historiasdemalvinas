@@ -1,7 +1,7 @@
 import React from "react";
 import { HomeContainer } from "./styled";
 import HomeSearch from "../../components/general/home/homesearch";
-import HomeVideo from "../../components/general/home/homevideo";
+import HomeGuerra from "../../components/general/home/homeguerra";
 import HomeDonarPrices from "../../components/general/home/homedonarprices";
 import HomeGrid from "../../components/general/home/homegrid";
 import Planet3D from "../../components/uikit/3dplanet";
@@ -11,7 +11,8 @@ export default function Home() {
   return (
     <HomeContainer>
       <HomeSearch />
-      <HomeVideo />
+      <HomeGuerra />
+      <HomeDonarPrices />
     </HomeContainer>
   );
 }

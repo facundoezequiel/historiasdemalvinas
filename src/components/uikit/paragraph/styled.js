@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 
+/* Principal container */
 const ParagraphContainer = styled.p`
   font-size: 1em;
   font-family: var(--inter);
@@ -10,12 +11,8 @@ const ParagraphContainer = styled.p`
   font-weight: 400;
   color: var(--black);
 
-  ${(props) =>
-    props.align === "right" &&
-    css`
-      text-align: right; !important;
-    `}
-
+  /* Props principal container */
+  /* Size proos */
   ${(props) =>
     props.size === "0.8" &&
     css`
@@ -28,6 +25,7 @@ const ParagraphContainer = styled.p`
       font-size: 0.9em !important;
     `}
 
+  /* Design props */
   ${(props) =>
     props.design === "cardTitle" &&
     css`

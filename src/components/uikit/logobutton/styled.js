@@ -10,6 +10,12 @@ display: flex;
 align-items: center;
 
   ${(props) =>
+    props.size === "8.7" &&
+    css`
+      width: 8.7%;
+    `}
+
+  ${(props) =>
     props.size === "10" &&
     css`
       width: 10%;

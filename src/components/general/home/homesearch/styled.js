@@ -57,6 +57,7 @@ const HomeSearchContainer = styled.section`
     background: -ms-linear-gradient(45deg, #105cff 0%, #00fbff 100%);
     background: linear-gradient(45deg, #105cff 0%, #00fbff 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#105cff', endColorstr='#00fbff', GradientType=1 );
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;

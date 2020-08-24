@@ -9,7 +9,7 @@ const HeaderContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
 
   div {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
   }
 

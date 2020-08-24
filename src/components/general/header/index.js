@@ -16,7 +16,7 @@ class Header extends React.Component {
           <LogoButton
             route="/home"
             imageLink="./assets/logos/LogoHistoriasAzul.svg"
-            size="10"
+            size="8.7"
           />
           <nav>
             <ul>

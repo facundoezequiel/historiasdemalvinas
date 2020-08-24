@@ -5,7 +5,6 @@ const Planet3DContainer = styled.div`
   margin: 0% 0% 0% 0% !important;
   outline: 0;
   background-color: var(--transparent);
-  position: relative;
 `;
 
 export { Planet3DContainer };
