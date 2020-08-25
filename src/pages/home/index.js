@@ -1,18 +1,16 @@
 import React from "react";
 import { HomeContainer } from "./styled";
 import HomeSearch from "../../components/general/home/homesearch";
-import HomeGuerra from "../../components/general/home/homeguerra";
-import HomeDonarPrices from "../../components/general/home/homedonarprices";
-import HomeGrid from "../../components/general/home/homegrid";
-import Planet3D from "../../components/uikit/3dplanet";
-import HomePlanet from "../../components/general/home/homeplanet";
+import HomeProyecto from "../../components/general/home/homeproyecto";
+import HomeGuerra from "./../../components/general/home/homeguerra";
+import HomePlaneta from "./../../components/general/home/homeplaneta";
 
 export default function Home() {
   return (
     <HomeContainer>
       <HomeSearch />
+      <HomeProyecto />
       <HomeGuerra />
-      <HomeDonarPrices />
     </HomeContainer>
   );
 }

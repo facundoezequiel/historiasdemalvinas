@@ -2,38 +2,39 @@ import React from "react";
 import { HomeGuerraContainer } from "./styled";
 import Title from "../../../uikit/title";
 import Paragraph from "../../../uikit/paragraph";
-import UncontrolledLottie from "../../../uikit/lottieanimation/UncontrolledLottie.jsx";
-import LottieAnimation from "../../../uikit/lottieanimation";
+import Image from "../../../uikit/image";
 
 export default function HomeGuerra() {
   return (
     <HomeGuerraContainer>
-      <div className="textContainer">
-        <Title
-          level={3}
-          texto={["El proyecto: ", <span>#NoLosOlvidamos</span>]}
-        ></Title>
-        <Paragraph
-          size="0.9"
-          text={[
-            "Historias de Malvinas, es un proyecto de ",
-            <span>repositorio web público y participativo</span>,
-            ", pensado, diseñado y desarrollado por ",
-            <span>Facundo Brahim</span>,
-            ", estudiante de Lic. en tecnología multimedial en la UMAI.",
-            <br></br>,
-            <br></br>,
-            "Su indetidad inspirada en la Cruz de Hierro y la bandera de Tierra del Fuego e Islas del Atlántico Sur, busca conceptualizar el reclamo argentino de soberania desde herramientas gráficas, invitando a los veteranos de Malvinas y familiares, estudiantes, investigadores, etc, a formar parte con sus historias.",
-            <br></br>,
-            <br></br>,
-            "Su ",
-            <span>misión</span>,
-            " busca revindicar el reclamo de soberanía de la República Argentina, sobre las Islas Malvinas, Georgias y Sandwich del Sur, de una innovadora forma digital, ante el colonialismo de facto y anticuado del Reino Unido.",
-          ]}
-        ></Paragraph>
-      </div>
-      <div className="animationLottie">
-        <UncontrolledLottie />
+      <div className="textImageContainer">
+        <div className="animationLottie">
+          <Image imageLink="./assets/images/home/guerra.webp"></Image>
+        </div>
+        <div className="textContainer">
+          <Title
+            level={3}
+            texto={["La guerra: ", <span>2 de abril de 1982</span>]}
+          ></Title>
+          <Paragraph
+            size="0.9"
+            text={[
+              "El 2 de abril de 1982, ",
+              <span>la dictadura cívico-militar</span>,
+              " inició el desembarco de tropas en las islas Malvinas, usurpadas por Inglaterra desde 1833. Con esta acción de afirmación de la soberanía nacional, apoyada por un importante sector de la población, la dictadura intentaba ocultar la gravísima situación social, política y económica a la que había conducido su gobierno. ",
+              <br></br>,
+              <br></br>,
+              "El conflicto armado concluyó el 14 de junio de 1982 con la rendición de la Argentina y provocó ",
+              <span>
+                la muerte de 649 soldados argentinos, 255 británicos y 3 civiles
+                isleños.
+              </span>,
+              " Se considera que la derrota militar aceleró el fin de la dictadura. El 22 de noviembre de 2000 el gobierno nacional estableció el 2 de Abril como el Día del Veterano y de los Caídos en la guerra de Malvinas.",
+              <br></br>,
+              <br></br>,
+            ]}
+          ></Paragraph>
+        </div>
       </div>
     </HomeGuerraContainer>
   );

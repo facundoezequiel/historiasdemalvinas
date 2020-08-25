@@ -1,11 +1,10 @@
-// UncontrolledLottie.jsx
 import React, { Component } from "react";
 import Lottie from "react-lottie";
-import animationData from "./LogoHomeDeg.json";
+import animationData from "./logohomedeg.json";
 
-class UncontrolledLottie extends Component {
+class LogoAnimationLottie extends Component {
   render() {
-    const defaultOptions = {
+    const animationOptions = {
       loop: true,
       autoplay: true,
       renderer: "svg",
@@ -16,10 +15,10 @@ class UncontrolledLottie extends Component {
     };
     return (
       <div>
-        <Lottie options={defaultOptions} height={500} width={500} />
+        <Lottie options={animationOptions} height={470} width={470} />
       </div>
     );
   }
 }
 
-export default UncontrolledLottie;
+export default LogoAnimationLottie;

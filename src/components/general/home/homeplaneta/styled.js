@@ -1,10 +1,12 @@
 import styled, { css } from "styled-components";
 
-const Planet3DContainer = styled.div`
+/* Principal container */
+const HomePlanetaContainer = styled.div`
   width: 100%;
   margin: 0% 0% 0% 0% !important;
   outline: 0;
   background-color: var(--transparent);
+  border-top: 1px solid var(--gray);
 `;
 
-export { Planet3DContainer };
+export { HomePlanetaContainer };
