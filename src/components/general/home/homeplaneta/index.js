@@ -1,21 +1,22 @@
 import React from "react";
-import { Planet3DContainer } from "./styled";
+import { HomePlanetaContainer } from "./styled";
 import ReactGlobe from "react-globe";
 import markers from "./markers";
+import ParticlesBackground from "./../../../uikit/particlesbackground";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 
-export default function Planet3D() {
+export default function HomePlaneta() {
   const options = {
     ambientLightColor: "white",
     cameraRotateSpeed: 0.5,
     cameraAutoRotateSpeed: 0.4,
     focusAnimation: 1000,
     focusEasingFunction: ["Cubic", "Out"],
-    enableMarkerGlow: true,
+    enableMarkerGlow: false,
     enableGlobeGlow: false,
     pointLightColor: "white",
-    pointLightIntensity: 0.3,
+    pointLightIntensity: 0,
     enableCameraZoom: false,
     cameraMaxDistanceRadiusScale: 3.2,
     focusDistanceRadiusScale: 3,
@@ -28,7 +29,8 @@ export default function Planet3D() {
   };
 
   return (
-    <Planet3DContainer>
+    <HomePlanetaContainer>
+      <ParticlesBackground></ParticlesBackground>
       <ReactGlobe
         height="700px"
         width="100%"
@@ -42,6 +44,6 @@ export default function Planet3D() {
           console.log(marker, markerObject, event)
         }
       />
-    </Planet3DContainer>
+    </HomePlanetaContainer>
   );
 }

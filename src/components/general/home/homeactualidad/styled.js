@@ -1,22 +1,15 @@
 import styled from "styled-components";
 
 /* Principal container */
-const HomeGuerraContainer = styled.section`
-  width: 100%;
-  border-top: 1px solid var(--gray);
-  border-bottom: 1px solid var(--gray);
+const HomeActualidadContainer = styled.section`
+  width: 70%;
+  background-color: var(--white);
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
   padding: 4% 0% 4% 0%;
-  background-color: var(--gray2);
-
-  .textImageContainer {
-    display: flex;
-    margin: 0 auto;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0% 0% 0% 0%;
-    align-items: center;
-    width: 70%;
-  }
 
   /* Title and text container */
   .textContainer {
@@ -57,4 +50,4 @@ const HomeGuerraContainer = styled.section`
   }
 `;
 
-export { HomeGuerraContainer };
+export { HomeActualidadContainer };
