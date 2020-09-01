@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 /* Principal container */
-const HomeProyectoContainer = styled.section`
+const HomeActualidadContainer = styled.section`
   width: 70%;
   background-color: var(--white);
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 2% 0% 2% 0%;
   align-items: center;
+  padding: 4% 0% 4% 0%;
 
   /* Title and text container */
   .textContainer {
@@ -41,12 +41,13 @@ const HomeProyectoContainer = styled.section`
   /* Animation lottie */
   .animationLottie {
     pointer-events: none;
+    margin: 0% 0% 0% 0% !important;
+    width: 45%;
   }
 
-  /* Animation Lottie div */
-  .animationLottie div {
-    margin: 0% 0% 0% 0% !important;
+  .animationLottie img {
+    width: 100%;
   }
 `;
 
-export { HomeProyectoContainer };
+export { HomeActualidadContainer };

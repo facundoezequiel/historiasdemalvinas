@@ -3,9 +3,10 @@ import styled from "styled-components";
 /* Principal container */
 const HomeGuerraContainer = styled.section`
   width: 100%;
-  background-color: var(--white);
   border-top: 1px solid var(--gray);
-  padding: 6% 0% 6% 0%;
+  border-bottom: 1px solid var(--gray);
+  padding: 4% 0% 4% 0%;
+  background-color: var(--gray2);
 
   .textImageContainer {
     display: flex;

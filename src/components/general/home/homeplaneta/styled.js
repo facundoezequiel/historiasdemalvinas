@@ -7,6 +7,7 @@ const HomePlanetaContainer = styled.div`
   outline: 0;
   background-color: var(--transparent);
   border-top: 1px solid var(--gray);
+  position: relative;
 `;
 
 export { HomePlanetaContainer };
