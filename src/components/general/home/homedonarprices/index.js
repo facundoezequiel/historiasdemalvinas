@@ -11,7 +11,7 @@ export default function HomeDonar() {
         <Title level={3} texto="Donaciones" />
         <Paragraph
           size="0.9"
-          text="Al ser un respositorio gratuito, hay costos que no pueden mantenerse sin la ayuda de la comunidad Malvinas."
+          text="Al ser un respositorio gratuito, hay costos que no pueden mantenerse sin la ayuda de la comunidad."
         />
       </div>
       <div className="pricesContainer">

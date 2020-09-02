@@ -2,9 +2,9 @@ import React from "react";
 import { HomePlanetaContainer } from "./styled";
 import ReactGlobe from "react-globe";
 import markers from "./markers";
-import ParticlesBackground from "./../../../uikit/particlesbackground";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
+import Paragraph from "../../../uikit/paragraph";
 
 export default function HomePlaneta() {
   const options = {
@@ -16,7 +16,7 @@ export default function HomePlaneta() {
     enableMarkerGlow: false,
     enableGlobeGlow: false,
     pointLightColor: "white",
-    pointLightIntensity: 0,
+    pointLightIntensity: 0.3,
     enableCameraZoom: false,
     cameraMaxDistanceRadiusScale: 3.2,
     focusDistanceRadiusScale: 3,
@@ -30,7 +30,10 @@ export default function HomePlaneta() {
 
   return (
     <HomePlanetaContainer>
-      <ParticlesBackground></ParticlesBackground>
+      <Paragraph
+        size="0.8"
+        text="Mapa 3D interactivo, posiciones internacionales ante la cuestión Malvinas"
+      ></Paragraph>
       <ReactGlobe
         height="700px"
         width="100%"
@@ -38,7 +41,7 @@ export default function HomePlaneta() {
         options={options}
         globeCloudsTexture={null}
         initialCoordinates={[-20.3521, -45.8198]}
-        globeTexture="./assets/images/maps/worldmap.jpg"
+        // globeTexture="./assets/images/maps/worldmap.jpg"
         globeBackgroundTexture={null}
         onClickMarker={(marker, markerObject, event) =>
           console.log(marker, markerObject, event)
