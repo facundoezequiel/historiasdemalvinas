@@ -8,6 +8,11 @@ const HomePlanetaContainer = styled.div`
   background-color: var(--transparent);
   border-top: 1px solid var(--gray);
   position: relative;
+
+  p {
+    text-align: center;
+    margin-top: 2%;
+  }
 `;
 
 export { HomePlanetaContainer };

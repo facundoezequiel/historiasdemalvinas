@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router";
 import { NavLink, Link } from "react-router-dom";
 import { HeaderContainer } from "./styled";
+import { animateScroll as scroll } from "react-scroll";
 import Logo from "../../uikit/logo";
 import LogoButton from "../../uikit/logobutton";
 
