@@ -32,7 +32,7 @@ const ParagraphContainer = styled.p`
       color: var(--black);
       font-size: 0.75em;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       line-height: 1.6;
     `}
 
@@ -42,7 +42,7 @@ const ParagraphContainer = styled.p`
       color: var(--black);
       font-size: 0.75em;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       line-height: 1.6;
       margin-top: 8% !important;
     `}
@@ -53,7 +53,7 @@ const ParagraphContainer = styled.p`
       color: var(--black);
       font-size: 0.75em;
       font-weight: 400;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       line-height: 1.6;
     `}
 

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 /* Principal container */
-const HomeProyectoContainer = styled.section`
+const HomeProyectoContainer = styled.div`
   width: 70%;
   background-color: var(--white);
-  display: flex;
   margin: 0 auto;
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 2% 0% 2% 0%;

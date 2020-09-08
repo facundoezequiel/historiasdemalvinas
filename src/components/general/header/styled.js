@@ -19,24 +19,15 @@ const HeaderContainer = styled.div`
     margin: 0;
   }
 
-  nav {
-    width: 33%;
+  .navBar {
+    width: 34%;
     margin: 0 auto;
+    display: flex;
     padding-top: 1.3%;
     padding-bottom: 1.3%;
   }
 
-  ul {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    width: 100%;
-    padding-left: 0%;
-    margin: 0;
-  }
-
-  li {
-    display: inline;
+  .navBar a {
     margin-right: 6%;
   }
 
@@ -50,7 +41,7 @@ const HeaderContainer = styled.div`
     position: relative;
   }
 
-  .pageButton::after {
+  .navBar a::after {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -64,12 +55,12 @@ const HeaderContainer = styled.div`
     cursor: default;
   }
 
-  .pageButton:hover {
+  .navBar a:hover {
     color: var(--black);
     cursor: pointer !important;
   }
 
-  .pageButton:hover:after {
+  .navBar a:hover:after {
     opacity: 1;
     transform: translateY(19.5px);
     background-color: var(--black);
@@ -91,12 +82,12 @@ const HeaderContainer = styled.div`
     transition: 0.2s ease 0s;
   }
 
-  .pageActive {
+  .navBar > .active {
     color: var(--orange) !important;
     cursor: default;
   }
 
-  .pageActive:after {
+  .navBar > .active:after {
     position: absolute;
     bottom: 0px;
     left: 0px;

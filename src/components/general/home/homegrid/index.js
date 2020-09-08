@@ -7,7 +7,7 @@ import Button from "../../../uikit/button";
 class HomeGrid extends React.Component {
   render() {
     return (
-      <HomeGridContainer>
+      <HomeGridContainer name="historias">
         <section>
           <div className="titleButtonsContainer">
             <Title level={3} texto="Últimas historias publicadas"></Title>

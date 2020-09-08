@@ -5,15 +5,15 @@ const CardContainer = styled.div`
   margin: 0% 1.4% 4% 1.4%;
   transition: 0.2s;
   background-color: var(--white);
-  border-radius: 16px 16px 16px 16px;
-  -moz-border-radius: 16px 16px 16px 16px;
-  -webkit-border-radius: 16px 16px 16px 16px;
+  border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -webkit-border-radius: 7px 7px 7px 7px;
   border: 0px solid #000000;
   cursor: pointer;
   height: 480px;
 
   :hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
   }
 
   img {
