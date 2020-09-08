@@ -1,91 +1,89 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { withRouter } from "react-router";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
+import * as Scroll from "react-scroll";
 import { HeaderContainer } from "./styled";
-import { animateScroll as scroll } from "react-scroll";
-import Logo from "../../uikit/logo";
 import LogoButton from "../../uikit/logobutton";
 
-class Header extends React.Component {
-  state = {
-    active: false,
-  };
-  render() {
-    return (
-      <HeaderContainer>
-        <div className="navprofileDiv">
-          <LogoButton
-            route="/home"
-            imageLink="./assets/logos/LogoHistoriasAzul.svg"
-            size="8.7"
-          />
-          <nav>
-            <ul>
-              <li>
-                <NavLink
-                  className="pageButton"
-                  activeClassName="pageActive"
-                  to="/home"
-                >
-                  Inicio
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="pageButton"
-                  activeClassName="pageActive"
-                  to="/proyecto"
-                >
-                  Proyecto
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="pageButton"
-                  activeClassName="pageActive"
-                  to="/historias"
-                >
-                  Historias
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="pageButton"
-                  activeClassName="pageActive"
-                  to="/comunidad"
-                >
-                  Comunidad
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="pageButton"
-                  activeClassName="pageActive"
-                  to="/donar"
-                >
-                  Donar
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="pageButton"
-                  activeClassName="pageActive"
-                  to="/contacto"
-                >
-                  Contacto
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-          <Link to="/profile" className="profileLink">
-            {/* Replace by user name*/}
-            <p>Facundo Brahim</p>
+function Header(props) {
+  let scrollSpy = Scroll.scrollSpy;
+  useEffect(() => {
+    scrollSpy.update();
+  });
+  return (
+    <HeaderContainer>
+      <div className="navprofileDiv">
+        <LogoButton
+          route="/home"
+          imageLink="./assets/logos/LogoHistoriasAzul.svg"
+          size="8.7"
+        />
+        <div className="navBar">
+          <Link
+            activeClass="active"
+            to="home"
+            smooth={true}
+            spy={true}
+            duration={500}
+          >
+            Inicio
+          </Link>
+          <Link
+            activeClass="active"
+            to="historias"
+            smooth={true}
+            spy={true}
+            duration={500}
+          >
+            Historias
+          </Link>
+          <Link
+            activeClass="active"
+            to="proyecto"
+            smooth={true}
+            spy={true}
+            duration={500}
+            offset={-50}
+          >
+            Proyecto
+          </Link>
+          <Link
+            activeClass="active"
+            to="comunidad"
+            smooth={true}
+            spy={true}
+            duration={500}
+          >
+            Comunidad
+          </Link>
+          <Link
+            activeClass="active"
+            to="donar"
+            smooth={true}
+            spy={true}
+            duration={500}
+          >
+            Donar
+          </Link>
+          <Link
+            activeClass="active"
+            to="contacto"
+            smooth={true}
+            spy={true}
+            duration={500}
+          >
+            Contacto
           </Link>
         </div>
-        <hr></hr>
-      </HeaderContainer>
-    );
-  }
+        <NavLink to="/profile" className="profileLink">
+          {/* Replace by user name*/}
+          <p>Facundo Brahim</p>
+        </NavLink>
+      </div>
+      <hr></hr>
+    </HeaderContainer>
+  );
 }
 
 export default withRouter(Header);

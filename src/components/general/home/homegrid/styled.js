@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
+/* Principal container */
 const HomeGridContainer = styled.div`
   width: 100%;
   margin: 0 auto;
-  background-color: var(--greenlight);
+  padding: 6% 0% 2% 0%;
+  background-color: var(--gray2);
 
   section {
     width: 72%;
     margin: 0 auto;
-    padding-top: 4%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 40px;
     row-gap: 1em;
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--greenlight);
   }
 
   .titleButtonsContainer {

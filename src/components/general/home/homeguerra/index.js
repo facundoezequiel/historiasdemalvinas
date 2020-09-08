@@ -14,7 +14,7 @@ export default function HomeGuerra() {
         <div className="textContainer">
           <Title
             level={3}
-            texto={["La guerra: ", <span>2 de abril de 1982</span>]}
+            texto={["1982: ", <span>El 2 de abril</span>]}
           ></Title>
           <Paragraph
             size="0.9"

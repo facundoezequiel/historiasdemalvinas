@@ -64,22 +64,22 @@ const ButtonContainer = styled.button`
 
     /* Size props */
     ${(props) =>
-      props.design === "homeSearch" &&
-      css`
-        width: 23%;
-        margin-right: 2.5%;
-        margin-left: 2.5%;
-        padding: 2.5% 1.5% 2.5% 1.5%;
-      `}
+    props.design === "homeSearch" &&
+    css`
+      width: 23%;
+      margin-right: 2.5%;
+      margin-left: 2.5%;
+      padding: 2.5% 1.5% 2.5% 1.5%;
+    `}
 
     ${(props) =>
-      props.design === "homeGrid" &&
-      css`
-        width: 35%;
-        margin: 0%;
-        margin-left: 8% !important;
-        padding: 2.3% 0% 2.3% 0%;
-      `}
+    props.design === "homeGrid" &&
+    css`
+      width: 35%;
+      margin: 0%;
+      margin-left: 8% !important;
+      padding: 4% 0% 4% 0%;
+    `}
 `;
 
 export { ButtonContainer };

@@ -10,7 +10,7 @@ import ReactTyped from "react-typed";
 
 export default function HomeSearch() {
   return (
-    <HomeSearchContainer>
+    <HomeSearchContainer name="home">
       <div className="searchDiv">
         <div className="titleType">
           <Title level={1} texto="Historias de"></Title>
