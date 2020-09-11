@@ -25,11 +25,11 @@ function App() {
           {/* PROYECTO */}
           <Route exact path="/proyecto"></Route>
           {/* INICIO */}
-          <Route exact path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
           {/* INICIAR SESION Y REGISTRO */}
-          <Route exact path="/"></Route>
+          <Route exact path="/sesion"></Route>
         </Switch>
       </div>
     </Router>
