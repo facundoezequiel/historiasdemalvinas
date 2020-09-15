@@ -1,5 +1,6 @@
 import React from "react";
 import { HomeContainer } from "./styled";
+import Header from "../../components/general/header";
 import HomeSearch from "../../components/general/home/homesearch";
 import HomeProyecto from "../../components/general/home/homeproyecto";
 import HomeGuerra from "./../../components/general/home/homeguerra";
@@ -11,6 +12,7 @@ import HomeDonar from "./../../components/general/home/homedonarprices";
 export default function Home() {
   return (
     <HomeContainer>
+      <Header />
       <HomeSearch />
       <HomeGrid />
       <HomeProyecto />

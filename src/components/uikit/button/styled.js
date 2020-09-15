@@ -62,7 +62,22 @@ const ButtonContainer = styled.button`
       color: var(--white);
     `}
 
-    /* Size props */
+    ${(props) =>
+    props.backgroundColor === "gray" &&
+    css`
+      background-color: var(--gray);
+      color: var(--black);
+    `}
+
+    /* Design props */
+    ${(props) =>
+    props.design === "iniciarSesion" &&
+    css`
+      width: 70% !important;
+      margin: 0 auto;
+      margin-top: 6%;
+    `}
+
     ${(props) =>
     props.design === "homeSearch" &&
     css`

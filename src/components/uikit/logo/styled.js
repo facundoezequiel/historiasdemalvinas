@@ -7,6 +7,12 @@ const LogoContainer = styled.img`
   padding: 0;
 
   ${(props) =>
+    props.size === "2" &&
+    css`
+      width: 2%;
+    `}
+
+  ${(props) =>
     props.size === "4" &&
     css`
       width: 4%;
@@ -25,6 +31,12 @@ const LogoContainer = styled.img`
     `}
 
   ${(props) =>
+    props.size === "13" &&
+    css`
+      width: 13%;
+    `}
+
+  ${(props) =>
     props.size === "15" &&
     css`
       width: 15%;
@@ -36,11 +48,17 @@ const LogoContainer = styled.img`
       width: 17%;
     `}
 
-    ${(props) =>
-      props.size === "25" &&
-      css`
-        width: 25%;
-      `}
+  ${(props) =>
+    props.size === "25" &&
+    css`
+      width: 25%;
+    `}
+
+  ${(props) =>
+    props.size === "35" &&
+    css`
+      width: 35%;
+    `}
 `;
 
 export { LogoContainer };
