@@ -38,6 +38,12 @@ const IconContainer = styled.div`
       margin-top: 0% !important;
       padding: 2.9% 3.5% 2.9% 3.5%;
     `}
+
+  ${(props) =>
+    props.design === "iniciarSesion" &&
+    css`
+      font-size: 1em;
+    `}
 `;
 
 /* Input container */
@@ -71,6 +77,12 @@ const InputContainer = styled.input`
         width: 84%;
         margin-top: 0% !important;
         padding: 2.8% 3% 2.8% 0% !important;
+      `}
+
+    ${(props) =>
+      props.design === "iniciarSesion" &&
+      css`
+        font-size: 0.9em;
       `}
   }
 `;
