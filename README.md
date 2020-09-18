@@ -1,2 +1,2 @@
 # Historias de Malvinas - Proyecto Senior 2020 - UMAI
- React Web Project
+ React Web and NextJS project
