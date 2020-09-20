@@ -5,6 +5,7 @@ import Layout from "@/containers/layout";
 import GlobalStyles from "@/constants/globalStyles";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 function MyApp({ Component, pageProps }) {
   return (
