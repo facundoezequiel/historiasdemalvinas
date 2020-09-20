@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Lottie from "react-lottie";
-
-const animationData = async () => await import("./logohomedeg.json");
+import * as animationData from "./logohomedeg.json";
 
 class LogoAnimationLottie extends Component {
   render() {
@@ -9,7 +8,7 @@ class LogoAnimationLottie extends Component {
       loop: true,
       autoplay: true,
       renderer: "svg",
-      animationData: animationData,
+      animationData: animationData.default,
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice",
       },
