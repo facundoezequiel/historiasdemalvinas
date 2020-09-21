@@ -16,7 +16,7 @@ export default function Header(props) {
     <HeaderContainer>
       <div className="navprofileDiv">
         <LogoButton
-          route="/home"
+          route="/"
           imageLink="./assets/logos/LogoHistoriasAzul.svg"
           size="8.7"
         />
