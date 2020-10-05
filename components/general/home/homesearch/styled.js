@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "@/constants/media";
 
 /* Principal container */
 const HomeSearchContainer = styled.section`
@@ -10,6 +11,19 @@ const HomeSearchContainer = styled.section`
   .searchDiv {
     width: 70%;
     margin: 0 auto;
+    /* Responsive */
+    @media (max-width: ${breakpoints.monitorMedium}) {
+      width: 80%;
+    }
+    @media (max-width: ${breakpoints.monitorSmall}) {
+      width: 90%;
+    }
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 95%;
+    }
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 100%;
+    }
   }
 
   /* Title container */
@@ -27,6 +41,25 @@ const HomeSearchContainer = styled.section`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /* Responsive */
+    @media (max-width: ${breakpoints.monitorMedium}) {
+      height: 294px !important;
+      min-height: 294px !important;
+    }
+    @media (max-width: ${breakpoints.monitorSmall}) {
+      height: 230px !important;
+      min-height: 230px !important;
+    }
+    @media (max-width: ${breakpoints.tablet}) {
+      height: 160px !important;
+      min-height: 160px !important;
+    }
+    @media (max-width: ${breakpoints.mobile}) {
+      height: 130px !important;
+      min-height: 130px !important;
+      padding-top: 20%;
+      padding-bottom: 10%;
+    }
   }
 
   /* Title "Historias de" */
@@ -38,6 +71,19 @@ const HomeSearchContainer = styled.section`
     font-size: 8em;
     font-family: var(--inter);
     vertical-align: bottom;
+    /* Responsive */
+    @media (max-width: ${breakpoints.monitorMedium}) {
+      font-size: 6.3em;
+    }
+    @media (max-width: ${breakpoints.monitorSmall}) {
+      font-size: 5.1em;
+    }
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 3.4em;
+    }
+    @media (max-width: ${breakpoints.mobile}) {
+      font-size: 2.8em;
+    }
   }
 
   /* Title "Malvinas, argentinos, heroes" */
@@ -63,6 +109,19 @@ const HomeSearchContainer = styled.section`
     text-align: center;
     font-size: 2.9em;
     font-family: var(--inter);
+    /* Responsive */
+    @media (max-width: ${breakpoints.monitorMedium}) {
+      font-size: 2.5em;
+    }
+    @media (max-width: ${breakpoints.monitorSmall}) {
+      font-size: 2.2em;
+    }
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 1.9em;
+    }
+    @media (max-width: ${breakpoints.mobile}) {
+      font-size: 1.7em;
+    }
   }
 
   /* Input and buttons container */
@@ -72,6 +131,19 @@ const HomeSearchContainer = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* Responsive */
+    @media (max-width: ${breakpoints.monitorMedium}) {
+      width: 80%;
+    }
+    @media (max-width: ${breakpoints.monitorSmall}) {
+      width: 90%;
+    }
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 95%;
+    }
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 100%;
+    }
   }
 
   /* Buttons container */
@@ -81,6 +153,19 @@ const HomeSearchContainer = styled.section`
     margin-bottom: 5%;
     display: flex;
     justify-content: center !important;
+    /* Responsive */
+    @media (max-width: ${breakpoints.monitorMedium}) {
+      width: 80%;
+    }
+    @media (max-width: ${breakpoints.monitorSmall}) {
+      width: 90%;
+    }
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 95%;
+    }
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 100%;
+    }
   }
 
   /* Paragraph */

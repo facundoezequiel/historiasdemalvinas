@@ -9,7 +9,7 @@ import HomeGrid from "@/components/general/home/homegrid";
 import HomeDonar from "@/components/general/home/homedonarprices";
 
 const HomeContainer = styled.div`
-  width: 100%;
+  width: 100% !important;
 `;
 
 export default function Home() {
