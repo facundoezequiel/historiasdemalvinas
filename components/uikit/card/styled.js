@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "@/constants/media";
 
 const CardContainer = styled.div`
   width: 20%;
@@ -11,6 +12,23 @@ const CardContainer = styled.div`
   border: 0px solid #000000;
   cursor: pointer;
   height: 480px;
+  /* Responsive */
+  @media (max-width: ${"1892px"}) {
+    width: 19.9%;
+  }
+  @media (max-width: ${"1809px"}) {
+    width: 20.6%;
+    margin: 0% 1% 4% 1%;
+  }
+  @media (max-width: ${"1734px"}) {
+    width: 21.4%;
+    margin: 0% 0.5% 4% 0.5%;
+  }  
+  @media (max-width: ${"1600px"}) {
+    width: 21.7%;
+    margin: 0% 0.2% 4% 0.2%;
+  }
+
 
   :hover {
     transform: scale(1.03);

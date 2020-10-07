@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "@/constants/media";
 
 /* Principal container */
 const HomeGridContainer = styled.div`
@@ -16,6 +17,19 @@ const HomeGridContainer = styled.div`
     row-gap: 1em;
     display: flex;
     flex-wrap: wrap;
+    /* Responsive */
+    @media (max-width: ${breakpoints.monitorMedium}) {
+      width: 82%;
+    }
+    @media (max-width: ${breakpoints.monitorSmall}) {
+      width: 92%;
+    }
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 97%;
+    }
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 100%;
+    }
   }
 
   .titleButtonsContainer {
