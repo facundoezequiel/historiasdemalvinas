@@ -20,12 +20,9 @@ export default async (req, res) => {
     // const { name: username } = user;
 
     //Agrego document en la collection de questions (usando firebase con async/await)
-    const responseKey = await db
-      .collection("usuarios")
-      .push({
-        nombre: name
-      })
-      .getKey();
+    const responseKey = await db.collection("usuarios").add({
+      nombre: "Pepe",
+    });
 
     //Devuelvo el usuario recien creado
     res.status(200).json({
