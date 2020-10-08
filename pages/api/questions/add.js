@@ -1,6 +1,6 @@
 import auth0 from "@/lib/auth0";
-import { firebase } from "lib";
-const firebaseDB = firebase.database();
+// Importo base de datos de firabase
+import { db } from "@/lib/firebase";
 
 export default async (req, res) => {
   try {
@@ -20,10 +20,10 @@ export default async (req, res) => {
     // const { name: username } = user;
 
     //Agrego document en la collection de questions (usando firebase con async/await)
-    const responseKey = await firebaseDB
-      .ref("questions")
+    const responseKey = await db
+      .collection("usuarios")
       .push({
-        name,
+        nombre: name
       })
       .getKey();
 
