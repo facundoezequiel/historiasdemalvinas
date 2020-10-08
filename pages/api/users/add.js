@@ -6,6 +6,8 @@ export default async (req, res) => {
   try {
     const { name } = req.body;
 
+    console.log(req.body);
+
     // //Add auth0
     // const session = await auth0.getSession(req);
     // if (!session || !session.user) {
@@ -20,14 +22,25 @@ export default async (req, res) => {
     // const { name: username } = user;
 
     //Agrego document en la collection de questions (usando firebase con async/await)
-    const responseKey = await db.collection("usuarios").add({
-      nombre: "Pepe",
-    });
+    const ref = db.collection("usuarios");
+
+    let id;
+
+    const responseKey = await ref
+      .add({
+        nombre: name,
+      })
+      .then(function (docRef) {
+        id = docRef.id;
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
 
     //Devuelvo el usuario recien creado
     res.status(200).json({
       status: "added",
-      id: responseKey,
+      id,
       name,
     });
   } catch (error) {
