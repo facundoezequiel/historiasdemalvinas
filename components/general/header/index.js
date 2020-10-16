@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useFetchUser } from "lib/user";
 import { Link } from "react-scroll";
 import * as Scroll from "react-scroll";
 import { HeaderContainer } from "./styled";
@@ -7,7 +6,6 @@ import LogoButton from "../../uikit/logobutton";
 import { default as NextLink } from "next/link";
 
 export default function Header(props) {
-  const { user, loading } = useFetchUser();
   let scrollSpy = Scroll.scrollSpy;
   useEffect(() => {
     scrollSpy.update();
@@ -78,6 +76,7 @@ export default function Header(props) {
             Contacto
           </Link>
         </div>
+        {/*
         <NextLink href="/auth/profile">
           <a className="profileLink">
             <p>Facundo Brahim</p>
@@ -92,6 +91,7 @@ export default function Header(props) {
             Login
           </a>
         )}
+        */}
       </div>
       <hr></hr>
     </HeaderContainer>

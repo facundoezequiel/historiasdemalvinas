@@ -8,19 +8,6 @@ export default async (req, res) => {
 
     console.log(req.body);
 
-    // //Add auth0
-    // const session = await auth0.getSession(req);
-    // if (!session || !session.user) {
-    //   res.writeHead(302, {
-    //     Location: "@/pages/api/login",
-    //   });
-    //   res.end();
-    //   return;
-    // }
-
-    // const { user } = session;
-    // const { name: username } = user;
-
     //Agrego document en la collection de questions (usando firebase con async/await)
     const ref = db.collection("usuarios");
 
