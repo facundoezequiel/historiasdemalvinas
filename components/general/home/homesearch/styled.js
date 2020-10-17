@@ -6,6 +6,7 @@ const HomeSearchContainer = styled.section`
   width: 100%;
   background-color: var(--white);
   border-bottom: 1px solid var(--gray);
+  min-height: 600px;
 
   /* Secundary container */
   .searchDiv {
