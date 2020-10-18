@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { breakpoints } from "@/constants/media";
 
 /* Principal container */
 const ButtonContainer = styled.button`
@@ -85,6 +86,11 @@ const ButtonContainer = styled.button`
       margin-right: 2.5%;
       margin-left: 2.5%;
       padding: 2.5% 1.5% 2.5% 1.5%;
+
+      @media (max-width: ${breakpoints.mobile}) {
+        width: 37.5%;
+        padding: 3.5% 1.5% 3.5% 1.5%;
+      }
     `}
 
     ${(props) =>

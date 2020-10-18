@@ -24,12 +24,13 @@ export default function HomeSearch() {
             smartBackspace
           />
         </div>
-        <div className="searchInput">
+        <div className="searchInputButtons">
           <Input
             type="text"
             icon={<FontAwesomeIcon icon={faSearch} />}
             text="Buscar en Historias de Malvinas"
             design="searchHome"
+            className="searchInput"
           ></Input>
           <div className="buttonsSearch">
             <Button

@@ -35,7 +35,6 @@ const HomeSearchContainer = styled.section`
     padding-bottom: 4%;
     flex-wrap: wrap;
     height: 337px !important;
-    min-height: 337px !important;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -58,8 +57,8 @@ const HomeSearchContainer = styled.section`
     @media (max-width: ${breakpoints.mobile}) {
       height: 130px !important;
       min-height: 130px !important;
-      padding-top: 20%;
-      padding-bottom: 10%;
+      padding-top: 30%;
+      padding-bottom: 20%;
     }
   }
 
@@ -83,13 +82,15 @@ const HomeSearchContainer = styled.section`
       font-size: 3.4em;
     }
     @media (max-width: ${breakpoints.mobile}) {
-      font-size: 2.8em;
+      font-size: 3.8em;
+      margin-bottom: 2%;
     }
   }
 
   /* Title "Malvinas, argentinos, heroes" */
   span {
     width: 100%;
+    min-height: 172px;
     font-weight: 800;
     background: #105cff;
     background: -moz-linear-gradient(45deg, #105cff 0%, #00fbff 100%);
@@ -113,20 +114,24 @@ const HomeSearchContainer = styled.section`
     /* Responsive */
     @media (max-width: ${breakpoints.monitorMedium}) {
       font-size: 2.5em;
+      min-height: 121px;
     }
     @media (max-width: ${breakpoints.monitorSmall}) {
       font-size: 2.2em;
+      min-height: 94px;
     }
     @media (max-width: ${breakpoints.tablet}) {
       font-size: 1.9em;
+      min-height: 70px;
     }
     @media (max-width: ${breakpoints.mobile}) {
-      font-size: 1.7em;
+      font-size: 2em;
+      min-height: 56px;
     }
   }
 
   /* Input and buttons container */
-  .searchInput {
+  .searchInputButtons {
     width: 70%;
     margin: 0 auto;
     display: flex;
@@ -166,6 +171,7 @@ const HomeSearchContainer = styled.section`
     }
     @media (max-width: ${breakpoints.mobile}) {
       width: 100%;
+      margin-bottom: 10%;
     }
   }
 
@@ -174,6 +180,12 @@ const HomeSearchContainer = styled.section`
     text-align: center;
     width: 100%;
     padding-bottom: 9%;
+
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 100%;
+      padding-bottom: 10%;
+      font-size: 1em !important;
+    }
   }
 `;
 

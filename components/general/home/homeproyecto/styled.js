@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "@/constants/media";
 
 /* Principal container */
 const HomeProyectoContainer = styled.div`
@@ -11,9 +12,18 @@ const HomeProyectoContainer = styled.div`
   padding: 2% 0% 2% 0%;
   align-items: center;
 
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 80%;
+  }
+
   /* Title and text container */
   .textContainer {
     width: 45%;
+
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 100%;
+      margin: 10% 0% 0% 0%;
+    }
   }
 
   /* Title "El proyecto" */
@@ -31,6 +41,11 @@ const HomeProyectoContainer = styled.div`
   p {
     width: 100%;
     margin-top: 6%;
+
+    @media (max-width: ${breakpoints.mobile}) {
+      font-size: 1em !important;
+      line-height: 32px;
+    }
   }
 
   /* Text orange */
@@ -41,11 +56,21 @@ const HomeProyectoContainer = styled.div`
   /* Animation lottie */
   .animationLottie {
     pointer-events: none;
+
+    @media (max-width: ${breakpoints.mobile}) {
+      margin: 0 auto !important;
+      width: 100% !important;
+    }
   }
 
   /* Animation Lottie div */
   .animationLottie div {
     margin: 0% 0% 0% 0% !important;
+
+    @media (max-width: ${breakpoints.mobile}) {
+      margin: 0 auto !important;
+      width: 100% !important;
+    }
   }
 `;
 

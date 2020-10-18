@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-scroll";
 import * as Scroll from "react-scroll";
 import { default as NextLink } from "next/link";
+import { breakpoints } from "@/constants/media";
 
 const RightNavContainer = styled.div`
   display: flex;
@@ -57,7 +58,7 @@ const RightNavContainer = styled.div`
     cursor: default;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.tablet}) {
     flex-flow: column nowrap;
     backdrop-filter: saturate(180%) blur(10px);
     background-color: rgba(255, 255, 255, 1);

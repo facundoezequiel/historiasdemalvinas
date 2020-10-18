@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Burger from "./burger"
 import LogoButton from "../../uikit/logobutton";
-
+import { breakpoints } from "@/constants/media";
 
 const Nav = styled.nav`
   width: 100%;
@@ -22,7 +22,12 @@ const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 80%;
+    }
   }
+
 `
 
 const Navbar = () => {

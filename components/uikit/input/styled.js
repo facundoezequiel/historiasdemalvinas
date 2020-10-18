@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { breakpoints } from "@/constants/media";
 
 /* Principal Container */
 const InputIconContainer = styled.div`
@@ -13,6 +14,10 @@ const InputIconContainer = styled.div`
     css`
       width: 70%;
       margin: 0 auto !important;
+
+      @media (max-width: ${breakpoints.mobile}) {
+        width: 80%;
+      }
     `}
 `;
 
@@ -36,7 +41,11 @@ const IconContainer = styled.div`
     props.design === "searchHome" &&
     css`
       margin-top: 0% !important;
-      padding: 2.9% 3.5% 2.9% 3.5%;
+      padding: 2.9% 3.5% 2.9% 3.5% !important;
+
+      @media (max-width: ${breakpoints.mobile}) {
+        padding: 4.5% 5% 4.5% 6% !important;
+      }
     `}
 
   ${(props) =>
@@ -77,6 +86,10 @@ const InputContainer = styled.input`
         width: 84%;
         margin-top: 0% !important;
         padding: 2.8% 3% 2.8% 0% !important;
+
+        @media (max-width: ${breakpoints.mobile}) {
+          padding: 4.5% 3% 4.5% 0% !important;
+        }
       `}
 
     ${(props) =>
