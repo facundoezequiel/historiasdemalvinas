@@ -7,8 +7,7 @@ import HomeActualidad from "@/components/general/home/homeactualidad";
 import HomePlaneta from "@/components/general/home/homeplaneta";
 import HomeGrid from "@/components/general/home/homegrid";
 import HomeDonar from "@/components/general/home/homedonarprices";
-// Me falta nav bar
-import User from "@/components/createUser";
+import Navbar from "@/components/general/Nav/navbar";
 
 const HomeContainer = styled.div`
   width: 100% !important;
@@ -17,7 +16,7 @@ const HomeContainer = styled.div`
 export default function Home() {
   return (
     <HomeContainer>
-      <User></User>
+      <Navbar />
       <HomeSearch />
       <HomeGrid />
       <HomeProyecto />

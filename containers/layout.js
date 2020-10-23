@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "@/components/general/header";
+import { useUser } from "@/lib/useUser";
 
 export default function Layout({ children }) {
-  return (
-    <>
-      {/*<Header />*/}
-      {children}
-    </>
-  );
+  const { user } = useUser();
+  console.log(user);
+
+  return <>{children}</>;
 }

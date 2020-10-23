@@ -1,6 +1,6 @@
-import auth0 from "@/lib/auth0";
 // Importo base de datos de firabase
 import { db } from "@/lib/firebase";
+import cookie from "cookie";
 
 export default async (req, res) => {
   try {
@@ -23,7 +23,6 @@ export default async (req, res) => {
       .catch(function (error) {
         console.error("Error adding document: ", error);
       });
-
     //Devuelvo el usuario recien creado
     res.status(200).json({
       status: "added",
