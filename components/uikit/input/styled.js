@@ -72,6 +72,10 @@ const InputContainer = styled.input`
   font-size: 1em;
   color: var(--inputgrayfont);
 
+  ::focus {
+    color: var(--blue);
+  }
+
   ::placeholder {
     color: var(--inputgrayfont);
   }

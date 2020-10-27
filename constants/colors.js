@@ -11,6 +11,7 @@ const Colors = {
   transparent: Color("transparent"),
   inputgray: Color("#d8dfe1"),
   inputgrayfont: Color("#818689"),
+  bluefacebook: Color("#4267B2"),
   // Tags color
   guerra: Color("#D4EBD6"),
   historia: Color("#eff3ff"),

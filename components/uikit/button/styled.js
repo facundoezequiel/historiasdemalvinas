@@ -63,6 +63,13 @@ const ButtonContainer = styled.button`
       color: var(--white);
     `}
 
+  ${(props) =>
+    props.backgroundColor === "facebook" &&
+    css`
+      background-color: var(--bluefacebook);
+    `}
+
+
     ${(props) =>
     props.backgroundColor === "gray" &&
     css`
@@ -77,6 +84,14 @@ const ButtonContainer = styled.button`
       width: 70% !important;
       margin: 0 auto;
       margin-top: 6%;
+    `}
+
+    ${(props) =>
+    props.design === "registro" &&
+    css`
+      width: 100% !important;
+      margin: 0 auto;
+      margin-top: 10%;
     `}
 
     ${(props) =>

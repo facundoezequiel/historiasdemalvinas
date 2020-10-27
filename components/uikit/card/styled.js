@@ -4,7 +4,7 @@ import { breakpoints } from "@/constants/media";
 const CardContainer = styled.div`
   width: 20%;
   margin: 0% 1.4% 4% 1.4%;
-  transition: 0.2s;
+  transition: 0.2s all;
   background-color: var(--white);
   border-radius: 7px 7px 7px 7px;
   -moz-border-radius: 7px 7px 7px 7px;
@@ -23,12 +23,11 @@ const CardContainer = styled.div`
   @media (max-width: ${"1734px"}) {
     width: 21.4%;
     margin: 0% 0.5% 4% 0.5%;
-  }  
+  }
   @media (max-width: ${"1600px"}) {
     width: 21.7%;
     margin: 0% 0.2% 4% 0.2%;
   }
-
 
   :hover {
     transform: scale(1.03);

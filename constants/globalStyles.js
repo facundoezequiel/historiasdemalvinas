@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     --transparent: ${Colors.transparent.toCSS()};
     --inputgray: ${Colors.inputgray.toCSS()};
     --inputgrayfont: ${Colors.inputgrayfont.toCSS()};
+    --bluefacebook: ${Colors.bluefacebook.toCSS()};
     /* Tags colors */
     --guerra: ${Colors.guerra.toCSS()};
     --guerrafont: ${Colors.guerrafont.toCSS()};

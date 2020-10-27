@@ -30,9 +30,7 @@ export default async (req, res) => {
           .set(
             // Genero dentro de un objeto la estructura que aunque algo no se llene quede cargada
             {
-              nombre: name,
-              apellido: lastname,
-              username,
+              nombreyapellido: nameandlastname,
               dni,
               combatiente,
               guardadas: [],
