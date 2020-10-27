@@ -1,13 +1,10 @@
 // Importo base de datos de firabase
 import { db, auth } from "@/lib/firebase";
-import cookie from "cookie";
 
 export default async (req, res) => {
   try {
     const {
-      name,
-      lastname,
-      username,
+      nameandlastname,
       dni,
       combatiente,
       email,
@@ -42,11 +39,10 @@ export default async (req, res) => {
           // Tiro en la consola si se creo o hubo un error y le paso el error
           .then(() => {
             console.log("Usuario creado");
+
+            res.status(200).json({ message: "Usuario creado" });
           });
       });
-    // Manda la usuario dentro del browser
-    res.writeHead(302, { Location: "/login" });
-    res.end();
   } catch (error) {
     console.error(error);
     // Returneo el error y si no un error 500

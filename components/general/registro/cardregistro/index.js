@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { CardRegistroContainer } from "./styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,7 +8,6 @@ import {
   faCalendarDay,
   faFingerprint,
   faLock,
-  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import Input from "@/components/uikit/input";
@@ -18,6 +18,8 @@ import Paragraph from "@/components/uikit/paragraph";
 import axios from "axios";
 
 export default function CardRegistro() {
+  // Usamos el hook para poder redireccionar al usuario cuando se completa el registro
+  const router = useRouter();
   /* Estados */
   const [formValue, setFormValue] = useState({
     nombreyapellido: "",
@@ -47,18 +49,26 @@ export default function CardRegistro() {
 
   /* Registra los datos en la base segun lo que hay en los estados*/
   const register = async ({ nombreyapellido, dni, edad, email, password }) => {
-    await axios.post("/api/auth/register", {
-      nameandlastname: nombreyapellido,
-      dni,
-      combatiente: false,
-      email,
-      age: edad,
-      password,
-    });
+    await axios
+      .post("/api/auth/register", {
+        nameandlastname: nombreyapellido,
+        dni,
+        combatiente: false,
+        email,
+        age: edad,
+        password,
+      })
+      .then(() => {
+        // router.push cambia el Location del browser a lo que le indiquemos
+        router.push("/login");
+      })
+      .catch(() => {
+        // Si no funciona el registro tiramos un cartelito. Hay que hacerlo mas prolijo.
+        alert("HEY ACA PASO ALGO");
+      });
   };
 
   const handleSubmit = (e) => {
-    /* Elimina las acciones por default del form html */
     e.preventDefault();
     /* Inicia la funcion register pasandole los datos de los inputs */
     register({
@@ -68,6 +78,7 @@ export default function CardRegistro() {
       email: formValue.email,
       password: formValue.password,
     });
+    return false;
   };
 
   return (
