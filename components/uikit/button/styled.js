@@ -18,9 +18,17 @@ const ButtonContainer = styled.button`
   font-size: 0.8em;
   margin-top: 6%;
   transition: all 0.2s;
+  position: relative;
 
   :hover {
     transform: scale(1.07);
+  }
+
+  svg {
+    position: absolute;
+    left: 5%;
+    top: 35%;
+    transform: scale(1.5);
   }
 
   /* Props principal container */
@@ -91,7 +99,7 @@ const ButtonContainer = styled.button`
     css`
       width: 100% !important;
       margin: 0 auto;
-      margin-top: 10%;
+      margin-bottom: 4%;
     `}
 
     ${(props) =>

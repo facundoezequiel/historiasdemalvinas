@@ -3,6 +3,7 @@ import { ButtonContainer } from "./styled";
 
 export default function Button({
   text,
+  icon,
   type,
   design,
   backgroundColor,
@@ -15,6 +16,7 @@ export default function Button({
       type={type}
       {...props}
     >
+      {icon}
       {text}
     </ButtonContainer>
   );

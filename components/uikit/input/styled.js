@@ -71,9 +71,14 @@ const InputContainer = styled.input`
   font-family: var(--inter);
   font-size: 1em;
   color: var(--inputgrayfont);
+  transition: 0.4s all;
 
-  ::focus {
-    color: var(--blue);
+  :focus-within {
+    color: var(--orange) !important;
+  }
+
+  :hover ~ #svg {
+    color: var(--orange) !important;
   }
 
   ::placeholder {

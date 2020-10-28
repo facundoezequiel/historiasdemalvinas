@@ -52,13 +52,11 @@ const CardRegistroContainer = styled.div`
   h3 {
     margin-top: 7%;
     width: 100%;
-    text-align: left !important;
+    text-align: left;
   }
 
   p {
     margin-top: 5%;
-    width: 100%;
-    text-align: left !important;
   }
 
   form {
@@ -66,6 +64,14 @@ const CardRegistroContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .buttonRegistro {
+    margin-top: 10%;
+  }
+
+  p span {
+    color: var(--orange);
   }
 `;
 

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 /* Principal container */
-const ParagraphContainer = styled.p`
+const ParagraphLinkContainer = styled.p`
   font-size: 1em;
   font-family: var(--inter);
   font-size: 0.8em;
@@ -10,6 +10,17 @@ const ParagraphContainer = styled.p`
   margin: 0 0 0 0;
   font-weight: 400;
   color: var(--black);
+
+  .linkColor {
+    color: var(--blue) !important;
+    text-decoration: none;
+    transition: 0.2s all;
+  }
+
+  .linkColor :hover {
+    color: var(--orange) !important;
+    font-weight: 800;
+  }
 
   /* Props principal container */
   /* Size proos */
@@ -91,4 +102,4 @@ const ParagraphContainer = styled.p`
     `}
 `;
 
-export { ParagraphContainer };
+export { ParagraphLinkContainer };

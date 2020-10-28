@@ -15,6 +15,8 @@ import Button from "@/components/uikit/button";
 import Logo from "@/components/uikit/logo";
 import Title from "@/components/uikit/title";
 import Paragraph from "@/components/uikit/paragraph";
+import ParagraphLink from "@/components/uikit/paragraphlink";
+import Image from "@/components/uikit/image";
 import axios from "axios";
 
 export default function CardRegistro() {
@@ -81,6 +83,11 @@ export default function CardRegistro() {
     return false;
   };
 
+  /*
+  const changeIconColor = (color) => {
+    document.getElementById("svg").style.color = color;
+  }; */
+
   return (
     // Contenedor general
     <CardRegistroContainer>
@@ -97,22 +104,42 @@ export default function CardRegistro() {
             />
           </div>
           {/* Titulo */}
-          <Title level={3} texto="Cree una cuenta" />
+          <Title level={3} texto="Bienvenido" />
           {/* Texto */}
+          <Paragraph design="registroCarta" size="0.8" text="Al usuario:" />
           <Paragraph
+            design="registroCarta"
             size="0.8"
-            text="Historias de Malvinas, es un proyecto universitario y sin finas de lucro, realizado por Facundo Brahim, estudiante
-            Lic. en Tecnología Multimedial de la Univ. Maimónides."
+            text={[
+              "Historias de Malvinas, es un proyecto universitario y ",
+              <span>sin finas de lucro</span>,
+              " realizado por ",
+              <span>Facundo Brahim</span>,
+              " estudiante Lic. en Tecnología Multimedial de la Univ. Maimónides.",
+            ]}
           />
           <Paragraph
+            design="registroCarta"
             size="0.8"
-            text="Se busca crear una repositorio web participativo de historias sobre la Guerra de Malvinas y temas relacionados 
-            con la participación de excombatientes y/o familiares de los mismos/caidos."
+            text={[
+              "Se busca crear una repositorio web participativo de historias sobre la ",
+              <span>Guerra de Malvinas</span>,
+              " y temas relacionados con la participación de excombatientes y/o familiares de los mismos/caidos.",
+            ]}
           />
           <Paragraph
+            design="registroCarta"
             size="0.8"
-            text="Así lograr una nueva forma de reclamo a traves de herramientas digitales ante la usurpación colonial e ilegal por parte
-            Reino Unido en las Islas Malvinas e Islas del Atlántico Sur."
+            text={[
+              "Así lograr una ",
+              <span>nueva forma de reclamo</span>,
+              " a traves de herramientas digitales ante la usurpación colonial e ilegal por parte Reino Unido en las Islas Malvinas e Islas del Atlántico Sur.",
+            ]}
+          />
+          <Image
+            imageLink="/assets/logos/Firma.svg"
+            size="25"
+            design="firmaRegistro"
           />
         </div>
       </div>
@@ -126,6 +153,7 @@ export default function CardRegistro() {
             size="0.8"
             text="Por favor, complete los datos para crear una nueva cuenta de usuario. Es necesaria una cuenta
             para poder ingresar."
+            design="registroCarta"
           />
           {/* Formulario de registro */}
           <form onSubmit={(e) => handleSubmit(e)}>
@@ -190,17 +218,26 @@ export default function CardRegistro() {
               text="Registrarse"
               backgroundColor="orange"
               design="registro"
+              className="buttonRegistro"
             />
+            {/* Boton registrarse con facebook */}
             <Button
-              text={<FontAwesomeIcon icon={faFacebookSquare} />}
+              text="Registrarse con Facebook"
+              icon={<FontAwesomeIcon icon={faFacebookSquare} />}
               backgroundColor="facebook"
               design="registro"
-              scope="public_profile,email"
-              onlogin="checkLoginState();"
+              /* scope="public_profile,email"
+              onlogin="checkLoginState();" */
             />
           </form>
           {/* Texto */}
-          <Paragraph size="0.8" text="Ya tengo una cuenta. Iniciar sesión" />
+          <ParagraphLink
+            textLink="Iniciar Sesión"
+            buttonLink="/login"
+            size="0.8"
+            text="Ya tengo una cuenta. "
+            design="registroYaTengoCuenta"
+          ></ParagraphLink>
         </div>
       </div>
     </CardRegistroContainer>

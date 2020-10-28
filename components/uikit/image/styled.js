@@ -40,6 +40,17 @@ const ImageContainer = styled.img`
     `}
 
     ${(props) =>
+    props.design === "firmaRegistro" &&
+    css`
+      display: block;
+      border: 0px solid #000000;
+      width: 100%;
+      object-fit: cover;
+      margin-top: 5%;
+      margin-left: 60%;
+    `}
+
+    ${(props) =>
     props.size === "10" &&
     css`
       display: block;
@@ -53,6 +64,14 @@ const ImageContainer = styled.img`
       display: block;
       object-fit: contain;
       width: 13%;
+    `}
+
+    ${(props) =>
+    props.size === "25" &&
+    css`
+      display: block;
+      object-fit: contain;
+      width: 25%;
     `}
 
     ${(props) =>
