@@ -9,8 +9,6 @@ const Nav = styled.nav`
   border-bottom: 2px solid #f1f1f1;
   padding: 0;
   display: flex;
-  position: fixed;
-  top: 0 !important;
   z-index: 99;
   backdrop-filter: saturate(180%) blur(10px);
   background-color: rgba(255, 255, 255, 0.9);

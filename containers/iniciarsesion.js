@@ -1,23 +1,26 @@
 import React from "react";
 import styled from "styled-components";
-import FormularioBotones from "@/components/general/iniciarsesion/FormularioBotones";
+import CardIniciarSesion from "@/components/general/iniciarsesion/cardiniciarsesion";
 
 const IniciarSesionContainer = styled.div`
   width: 100%;
   height: 100vh;
-  background-image: url("/assets/images/login/Fondo.jpg");
-  background-size: cover;
-  background-position: bottom;
+  background-color: var(--gray);
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
   align-items: center;
-  align-content: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
 `;
 
 export default function IniciarSesion() {
   return (
     <IniciarSesionContainer>
-      <FormularioBotones />
+      <CardIniciarSesion />
     </IniciarSesionContainer>
   );
 }

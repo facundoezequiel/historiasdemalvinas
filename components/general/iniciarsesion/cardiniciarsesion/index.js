@@ -1,47 +1,35 @@
-import React, { useState } from "react";
-import { useRouter } from "next/router";
-import { CardRegistroContainer } from "./styled";
+import React, { useState, useEffect } from "react";
+import { CardIniciarSesionContainer } from "./styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAddressCard,
-  faAt,
-  faCalendarDay,
-  faFingerprint,
-  faLock,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAt, faLock } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
-import Input from "@/components/uikit/input";
-import Button from "@/components/uikit/button";
 import Logo from "@/components/uikit/logo";
 import Title from "@/components/uikit/title";
 import Paragraph from "@/components/uikit/paragraph";
+import Input from "@/components/uikit/input";
+import Button from "@/components/uikit/button";
 import ParagraphLink from "@/components/uikit/paragraphlink";
 import Image from "@/components/uikit/image";
-import axios from "axios";
+import { auth } from "@/lib/firebase";
+import {
+  setUserCookie,
+  removeUserCookie,
+  getUserFromCookie,
+} from "@/lib/userCookies";
+import { mapUserData } from "@/lib/mapUserData";
 
-export default function CardRegistro() {
-  // Usamos el hook para poder redireccionar al usuario cuando se completa el registro
-  const router = useRouter();
-  /* Estados */
+export default function CardInciarSesion() {
+  // User state retorna un array con dos posiciones, la primera el valor del estado y la segunda un funcion que setea el estado
+  // Incia el estado cuando el componente se termino de renderizar, con valores iniciales desde un objeto con dos propiedades nulas en principio
   const [formValue, setFormValue] = useState({
-    nombreyapellido: "",
-    dni: "",
-    edad: "",
     email: "",
     password: "",
+    // Si fuese de registro tendria mas info
   });
 
-  /* Facebook Login Facebook
-  FB.getLoginStatus(function (response) {
-    statusChangeCallback(response);
-  });
-  function checkLoginState() {
-    FB.getLoginStatus(function (response) {
-      statusChangeCallback(response);
-    });
-  } */
+  // Registro: Haria la funcion async que paso gonza por slack y le paso todas las propiedades tengo que importar axios
+  // await axios.post('/api/auth/register', {email: fromValue.emial , password: 'bla bla'});
 
-  /* Le asigna a los estados lo que hay en cada input */
   const handleChange = (key, value) => {
     setFormValue({
       ...formValue,
@@ -49,48 +37,45 @@ export default function CardRegistro() {
     });
   };
 
-  /* Registra los datos en la base segun lo que hay en los estados*/
-  const register = async ({ nombreyapellido, dni, edad, email, password }) => {
-    await axios
-      .post("/api/auth/register", {
-        nameandlastname: nombreyapellido,
-        dni,
-        combatiente: false,
-        email,
-        age: edad,
-        password,
-      })
-      .then(() => {
-        // router.push cambia el Location del browser a lo que le indiquemos
-        router.push("/login");
-      })
-      .catch(() => {
-        // Si no funciona el registro tiramos un cartelito. Hay que hacerlo mas prolijo.
-        alert("HEY ACA PASO ALGO");
-      });
+  // Recibe el mail y la contraseña que le estoy pasando e inica sesion con esos datos
+  // rEGISTRO seria la funcion signUp adentro antes de los parentesis tendria un async y dentro pongo la funcion de acios
+  const login = ({ email, password }) => {
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /* Inicia la funcion register pasandole los datos de los inputs */
-    register({
-      nombreyapellido: formValue.nombreyapellido,
-      dni: formValue.dni,
-      edad: formValue.edad,
-      email: formValue.email,
-      password: formValue.password,
-    });
-    return false;
+    // Cambiar por la funcion que corresponda
+    login({ email: formValue.email, password: formValue.password });
   };
 
-  /*
-  const changeIconColor = (color) => {
-    document.getElementById("svg").style.color = color;
-  }; */
+  // Guarda el token en las cookies
+  // Esto registro no lo usa
+  const onAuthStateChange = () => {
+    return auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const userData = mapUserData(user);
+        setUserCookie(userData);
+        // console.log(getUserFromCookie());
+      } else {
+        removeUserCookie();
+      }
+    });
+  };
+
+  // Esto registro no lo usa
+  useEffect(() => {
+    const unsubscribe = onAuthStateChange();
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   return (
-    // Contenedor general
-    <CardRegistroContainer>
+    <CardIniciarSesionContainer>
       {/* Lado Derecho / Abajo */}
       <div className="containerDiv1">
         {/* Data container */}
@@ -151,95 +136,62 @@ export default function CardRegistro() {
           {/* Texto */}
           <Paragraph
             size="0.8"
-            text="Por favor, complete los datos para crear una nueva cuenta de usuario. Es necesaria una cuenta
-            para poder ingresar."
+            text="Por favor, complete los datos para poder inciar sesión"
+            design="registroCarta"
+          />
+          {/* Texto */}
+          <Paragraph
+            size="0.8"
+            text="Si acaba de registrarse, valide su identidad mediante el correo que le fue enviado para poder inicar sesión."
             design="registroCarta"
           />
           {/* Formulario de registro */}
           <form onSubmit={(e) => handleSubmit(e)}>
-            {/* Input Nombre */}
-            <Input
-              icon={<FontAwesomeIcon icon={faFingerprint} />}
-              name="nombre y apellido"
-              text="Nombre y apellido"
-              type="text"
-              onChange={(e) => handleChange("nombreyapellido", e.target.value)}
-              value={formValue.nombreyapellido}
-              design="iniciarSesion"
-              required
-            ></Input>
-            {/* Input DNI */}
-            <Input
-              icon={<FontAwesomeIcon icon={faAddressCard} />}
-              name="dni"
-              text="D.N.I."
-              type="number"
-              onChange={(e) => handleChange("dni", e.target.value)}
-              value={formValue.dni}
-              design="iniciarSesion"
-              required
-            ></Input>
-            {/* Input Fecha de nacimiento */}
-            <Input
-              icon={<FontAwesomeIcon icon={faCalendarDay} />}
-              name="edad"
-              text="Edad"
-              type="number"
-              onChange={(e) => handleChange("edad", e.target.value)}
-              value={formValue.edad}
-              design="iniciarSesion"
-              required
-            ></Input>
             {/* Input Correo electronico */}
             <Input
               icon={<FontAwesomeIcon icon={faAt} />}
-              name="email"
-              text="Correo electronico"
+              text="Correo electrónico"
               type="email"
+              design="iniciarSesion"
               onChange={(e) => handleChange("email", e.target.value)}
               value={formValue.email}
-              design="iniciarSesion"
-              required
-            ></Input>
+            />
             {/* Input Contraseña */}
             <Input
               icon={<FontAwesomeIcon icon={faLock} />}
-              name="password"
-              text="Contraseña (6 carácteres min.)"
+              text="Contraseña"
               type="password"
+              design="iniciarSesion"
               onChange={(e) => handleChange("password", e.target.value)}
               value={formValue.password}
-              design="iniciarSesion"
-              required
-            ></Input>
+            />
             {/* Boton enviar datos */}
             <Button
+              text="Iniciar Sesión"
               type="submit"
-              text="Registrarse"
               backgroundColor="orange"
+              design="iniciarSesion"
               design="registro"
               className="buttonRegistro"
             />
             {/* Boton registrarse con facebook */}
             <Button
-              text="Registrarse con Facebook"
-              icon={<FontAwesomeIcon icon={faFacebookSquare} />}
+              text="Entrar con Facebook"
               backgroundColor="blue"
               design="registro"
-              /* scope="public_profile,email"
-              onlogin="checkLoginState();" */
+              icon={<FontAwesomeIcon icon={faFacebookSquare} />}
             />
           </form>
           {/* Texto */}
           <ParagraphLink
-            textLink="Iniciar Sesión"
-            buttonLink="/login"
+            textLink="Registrarse"
+            buttonLink="/register"
             size="0.8"
-            text="Ya tengo una cuenta. "
+            text="No tengo una cuenta. "
             design="registroYaTengoCuenta"
           ></ParagraphLink>
         </div>
       </div>
-    </CardRegistroContainer>
+    </CardIniciarSesionContainer>
   );
 }

@@ -31,7 +31,7 @@ const HomeSearchContainer = styled.section`
   .titleType {
     display: flex;
     width: 100%;
-    padding-top: 10%;
+    padding-top: 6%;
     padding-bottom: 4%;
     flex-wrap: wrap;
     height: 337px !important;
