@@ -7,6 +7,10 @@ import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { Fuego, FuegoProvider } from "@nandorojo/swr-firestore";
+import { config } from "@/lib/firebase";
+
+const fuego = new Fuego(config);
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,13 +24,14 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
-      <AuthProvider>
-        <Layout>
-          <Component {...pageProps} />
-          <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: `(function () {
+      <FuegoProvider fuego={fuego}>
+        <AuthProvider>
+          <Layout>
+            <Component {...pageProps} />
+            <script
+              type="text/javascript"
+              dangerouslySetInnerHTML={{
+                __html: `(function () {
               function $MPC_load() {
                 window.$MPC_loaded !== true &&
                   (function () {
@@ -47,12 +52,12 @@ function MyApp({ Component, pageProps }) {
                   : window.addEventListener("load", $MPC_load, false)
                 : null;
             })();`,
-            }}
-          />
-          <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: `  window.fbAsyncInit = function() {
+              }}
+            />
+            <script
+              type="text/javascript"
+              dangerouslySetInnerHTML={{
+                __html: `  window.fbAsyncInit = function() {
               FB.init({
                 appId      : '{360926591896361}',
                 cookie     : true,
@@ -68,10 +73,11 @@ function MyApp({ Component, pageProps }) {
                js.src = "https://connect.facebook.net/en_US/sdk.js";
                fjs.parentNode.insertBefore(js, fjs);
              }(document, 'script', 'facebook-jssdk'));}`,
-            }}
-          />
-        </Layout>
-      </AuthProvider>
+              }}
+            />
+          </Layout>
+        </AuthProvider>
+      </FuegoProvider>
       <GlobalStyles />
     </>
   );
