@@ -56,11 +56,12 @@ export function setLoadingAuthState({ state }) {
   };
 }
 
-export function setUserAuth({ userAuth }) {
+export function setUserAuth({ logout, user }) {
   return {
     type: SET_USERAUTH,
     payload: {
-      userAuth,
+      logout,
+      user,
     },
   };
 }
@@ -71,11 +72,11 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch(setLoadingAuthState({ state: false }));
-    dispatch(setUserAuth({ userAuth: { logout, user } }));
+    dispatch(setUserAuth({ logout, user }));
     if (!user) {
-      dispatch(setUser(null));
+      dispatch(setUser({ user: null }));
     }
-  }, [user, logout]);
+  }, [user]);
 
   return (
     <AuthStateContext.Provider
