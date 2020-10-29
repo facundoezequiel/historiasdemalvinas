@@ -1,6 +1,6 @@
 import React from "react";
-import Home from "@/containers/home";
+import IniciarSesion from "@/containers/iniciarsesion";
 
 export default function Index() {
-  return <Home />;
+  return <IniciarSesion />;
 }

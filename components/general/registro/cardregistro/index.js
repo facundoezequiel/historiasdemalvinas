@@ -62,7 +62,7 @@ export default function CardRegistro() {
       })
       .then(() => {
         // router.push cambia el Location del browser a lo que le indiquemos
-        router.push("/login");
+        router.push("/");
       })
       .catch(() => {
         // Si no funciona el registro tiramos un cartelito. Hay que hacerlo mas prolijo.
@@ -233,7 +233,7 @@ export default function CardRegistro() {
           {/* Texto */}
           <ParagraphLink
             textLink="Iniciar Sesión"
-            buttonLink="/login"
+            buttonLink="/"
             size="0.8"
             text="Ya tengo una cuenta. "
             design="registroYaTengoCuenta"
