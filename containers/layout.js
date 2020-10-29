@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { useAuthState } from "@/contexts/AuthContext";
 
 export default function Layout({ children }) {
-  const { user } = useAuthState();
+  const userAuth = useAuthState();
 
-  console.log(user);
+  console.log(userAuth);
 
   return <>{children}</>;
 }

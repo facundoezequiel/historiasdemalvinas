@@ -70,12 +70,13 @@ export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
 
   useEffect(() => {
+    console.log(user);
     dispatch(setLoadingAuthState({ state: false }));
     dispatch(setUserAuth({ userAuth: { logout, user } }));
     if (!user) {
-      dispatch(setUser(null));
+      dispatch(setUser({ user: null }));
     }
-  }, [user, logout]);
+  }, [user]);
 
   return (
     <AuthStateContext.Provider
