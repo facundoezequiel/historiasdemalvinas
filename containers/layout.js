@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { useUser } from "@/lib/useUser";
-import { AuthContext } from "@/contexts/AuthContext";
+import { useAuthState } from "@/contexts/AuthContext";
 
 export default function Layout({ children }) {
-  const { user, loadingAuthState } = useContext(AuthContext);
-  console.log(user, loadingAuthState);
+  const { user } = useAuthState();
+
+  console.log(user);
 
   return <>{children}</>;
 }
