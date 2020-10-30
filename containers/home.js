@@ -10,14 +10,18 @@ import HomeDonar from "@/components/general/home/homedonarprices";
 import Navbar from "@/components/general/Nav/navbar";
 import Fade from "react-reveal/Fade";
 import Headroom from "react-headroom";
+import { useAuthState, useAuthDispatch, setUser } from "@/contexts/AuthContext";
 
 const HomeContainer = styled.div`
   width: 100% !important;
 `;
 
 export default function Home() {
+  const { userAuth, userData } = useAuthState();
+
   return (
     <HomeContainer>
+      <p>{userData && userData.nombreyapellido}</p>
       <Headroom>
         <Navbar />
       </Headroom>
