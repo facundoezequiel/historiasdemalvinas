@@ -17,11 +17,10 @@ const HomeContainer = styled.div`
 `;
 
 export default function Home() {
-  const { userAuth, userData } = useAuthState();
+  // const { userAuth, userData } = useAuthState();
 
   return (
     <HomeContainer>
-      <p>{userData && userData.nombreyapellido}</p>
       <Headroom>
         <Navbar />
       </Headroom>

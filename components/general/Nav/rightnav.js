@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Link } from "react-scroll";
 import * as Scroll from "react-scroll";
 import { default as NextLink } from "next/link";
 import { breakpoints } from "@/constants/media";
+import { useAuthState, useAuthDispatch, setUser } from "@/contexts/AuthContext";
 
 const RightNavContainer = styled.div`
   display: flex;
@@ -63,7 +64,7 @@ const RightNavContainer = styled.div`
     backdrop-filter: saturate(180%) blur(10px);
     background-color: rgba(255, 255, 255, 1);
     position: fixed;
-    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
     right: 0;
     height: 100vh;
@@ -93,75 +94,76 @@ const RightNavContainer = styled.div`
     a:hover:after {
       opacity: 0;
     }
-
   }
 `;
 
-const RightNav = ({ open }) => {
+export default function RightNav({ open }) {
+  const { userAuth, userData } = useAuthState();
   let scrollSpy = Scroll.scrollSpy;
   useEffect(() => {
     scrollSpy.update();
   });
+
   return (
     <RightNavContainer open={open} className="navBar">
-          <Link
-            activeClass="active"
-            to="home"
-            smooth={true}
-            spy={true}
-            duration={500}
-          >
-            Inicio
-          </Link>
-          <Link
-            activeClass="active"
-            to="historias"
-            smooth={true}
-            spy={true}
-            duration={500}
-          >
-            Historias
-          </Link>
-          <Link
-            activeClass="active"
-            to="proyecto"
-            smooth={true}
-            spy={true}
-            duration={500}
-            offset={-50}
-          >
-            Proyecto
-          </Link>
-          <Link
-            activeClass="active"
-            to="comunidad"
-            smooth={true}
-            spy={true}
-            duration={500}
-          >
-            Comunidad
-          </Link>
-          <Link
-            activeClass="active"
-            to="donar"
-            smooth={true}
-            spy={true}
-            duration={500}
-          >
-            Donar
-          </Link>
-          <Link
-            activeClass="active"
-            to="contacto"
-            smooth={true}
-            s
-            spy={true}
-            duration={500}
-          >
-            Contacto
-          </Link>
+      <Link
+        activeClass="active"
+        to="home"
+        smooth={true}
+        spy={true}
+        duration={500}
+      >
+        Inicio
+      </Link>
+      <Link
+        activeClass="active"
+        to="historias"
+        smooth={true}
+        spy={true}
+        duration={500}
+      >
+        Historias
+      </Link>
+      <Link
+        activeClass="active"
+        to="proyecto"
+        smooth={true}
+        spy={true}
+        duration={500}
+        offset={-50}
+      >
+        Proyecto
+      </Link>
+      <Link
+        activeClass="active"
+        to="comunidad"
+        smooth={true}
+        spy={true}
+        duration={500}
+      >
+        Comunidad
+      </Link>
+      <Link
+        activeClass="active"
+        to="donar"
+        smooth={true}
+        spy={true}
+        duration={500}
+      >
+        Donar
+      </Link>
+      <Link
+        activeClass="active"
+        to="contacto"
+        smooth={true}
+        spy={true}
+        duration={500}
+      >
+        Contacto
+      </Link>
+      <NextLink href="/profile">
+        <a>{userData && userData.nombreyapellido}</a>
+      </NextLink>
     </RightNavContainer>
-  )
+  );
 }
-
-export default RightNav

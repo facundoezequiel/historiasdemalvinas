@@ -17,6 +17,7 @@ import {
   getUserFromCookie,
 } from "@/lib/userCookies";
 import { mapUserData } from "@/lib/mapUserData";
+import { useRouter } from "next/router";
 
 export default function CardInciarSesion() {
   // User state retorna un array con dos posiciones, la primera el valor del estado y la segunda un funcion que setea el estado
@@ -42,7 +43,10 @@ export default function CardInciarSesion() {
   const login = ({ email, password }) => {
     auth
       .signInWithEmailAndPassword(email, password)
-      .then((response) => console.log(response))
+      .then((response) => {
+        console.log(response);
+        router.push("/inicio");
+      })
       .catch((error) => console.log(error));
   };
 
@@ -59,6 +63,7 @@ export default function CardInciarSesion() {
       if (user) {
         const userData = mapUserData(user);
         setUserCookie(userData);
+
         // console.log(getUserFromCookie());
       } else {
         removeUserCookie();

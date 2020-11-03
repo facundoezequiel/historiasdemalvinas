@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import Burger from "./burger"
+import React from "react";
+import styled from "styled-components";
+import Burger from "./burger";
 import LogoButton from "../../uikit/logobutton";
 import { breakpoints } from "@/constants/media";
 
@@ -25,22 +25,19 @@ const Nav = styled.nav`
       width: 80%;
     }
   }
+`;
 
-`
-
-const Navbar = () => {
+export default function Navbar() {
   return (
     <Nav>
       <div className="navContainer">
         <LogoButton
-            route="/"
-            imageLink="./assets/logos/LogoHistoriasAzul.svg"
-            size="125.2px"
-          />
+          route="/"
+          imageLink="./assets/logos/LogoHistoriasAzul.svg"
+          size="125.2px"
+        />
         <Burger />
       </div>
     </Nav>
-  )
+  );
 }
-
-export default Navbar
