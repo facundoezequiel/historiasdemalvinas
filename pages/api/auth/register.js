@@ -29,6 +29,7 @@ export default async (req, res) => {
             {
               nombreyapellido: nameandlastname,
               dni,
+              fotoperfil: null,
               combatiente,
               guardadas: [],
               mail: email,

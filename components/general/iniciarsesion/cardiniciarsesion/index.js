@@ -20,6 +20,8 @@ import { mapUserData } from "@/lib/mapUserData";
 import { useRouter } from "next/router";
 
 export default function CardInciarSesion() {
+  const router = useRouter();
+
   // User state retorna un array con dos posiciones, la primera el valor del estado y la segunda un funcion que setea el estado
   // Incia el estado cuando el componente se termino de renderizar, con valores iniciales desde un objeto con dos propiedades nulas en principio
   const [formValue, setFormValue] = useState({
