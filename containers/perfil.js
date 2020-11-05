@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuthState, useAuthDispatch, setUser } from "@/contexts/AuthContext";
 import Loading from "@/components/uikit/loading";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { storage } from "@/lib/firebase";
+import { storage, db } from "@/lib/firebase";
 
 const ProfileContainer = styled.div`
   width: 100%;
@@ -20,29 +20,44 @@ const ProfileContainer = styled.div`
 
 export default function Perfil() {
   const [foto, setFoto] = useState();
+  const [fotoCargada, setFotoCargada] = useState();
+  const [fotoMiniatura, setMiniatura] = useState(
+    "/assets/images/card/Card1.png"
+  );
+  const Router = useRouter();
+  const { userAuth, userData, logout } = useAuthState();
+  useEffect(() => {
+    if (userData && userData.fotoperfil) {
+      setMiniatura(userData.fotoperfil);
+    }
+  }, [userData]);
 
   const HandleInputChange = (file) => {
-    setFoto(file);
+    const fileInstance = new File([file], file.name);
+    setMiniatura(URL.createObjectURL(fileInstance));
+    setFoto(fileInstance);
   };
 
   const HandleSubmitFile = async () => {
-    const file = new File([foto], foto.name);
     const storageRef = storage.ref();
     const fileRef = storageRef.child(foto.name);
-    await fileRef
-      .put(file)
-      .then((snapshoot) => {
-        snapshoot.ref.getDownloadURL().then((url) => {
+    const fotoURL = await fileRef
+      .put(foto)
+      .then(async (snapshoot) => {
+        return await snapshoot.ref.getDownloadURL().then((url) => {
           console.log("foto cargada", url);
+          setFotoCargada(url);
+          return url;
         });
       })
       .catch((error) => {
         console.log(error);
       });
-  };
 
-  const Router = useRouter();
-  const { userAuth, userData, logout } = useAuthState();
+    const dataUpdate = { fotoperfil: fotoURL };
+
+    db.collection("usuarios").doc(userAuth.id).update(dataUpdate);
+  };
 
   const HandleLogout = async () => {
     await logout();
@@ -70,6 +85,7 @@ export default function Perfil() {
             onChange={(e) => HandleInputChange(e.target.files[0])}
           ></input>
           <button onClick={() => HandleSubmitFile()}>Guardar cambios</button>
+          <img src={fotoCargada ? fotoCargada : fotoMiniatura}></img>
         </div>
       )}
     </ProfileContainer>
