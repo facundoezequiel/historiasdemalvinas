@@ -15,7 +15,6 @@
     "@testing-library/user-event": "^7.2.1",
     "animate.css": "^4.1.1",
     "axios": "^0.20.0",
-    "babel-plugin-styled-components": "^1.11.1",
     "color-js": "^1.0.5",
     "cookie": "^0.4.1",
     "firebase": "^7.21.1",
@@ -66,5 +65,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1"
   }
 }
