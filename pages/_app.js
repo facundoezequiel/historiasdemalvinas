@@ -17,6 +17,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Historias de Malvinas</title>
+        <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
