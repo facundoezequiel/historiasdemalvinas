@@ -51,6 +51,26 @@ const ImageContainer = styled.img`
     `}
 
     ${(props) =>
+    props.design === "imagenPerfilHeader" &&
+    css`
+      display: block;
+      border: 0px solid #000000;
+      border-radius: 200px 200px 200px 200px;
+      -moz-border-radius: 200px 200px 200px 200px;
+      -webkit-border-radius: 200px 200px 200px 200px;
+      border: 0px solid #000000;
+    `}
+
+    ${(props) =>
+    props.size === "5" &&
+    css`
+      object-fit: cover;
+      display: block;
+      width: 27px;
+      height: 27px;
+    `}
+
+    ${(props) =>
     props.size === "10" &&
     css`
       display: block;

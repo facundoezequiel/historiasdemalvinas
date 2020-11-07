@@ -5,10 +5,14 @@ import * as Scroll from "react-scroll";
 import { default as NextLink } from "next/link";
 import { breakpoints } from "@/constants/media";
 import { useAuthState, useAuthDispatch, setUser } from "@/contexts/AuthContext";
+import Image from "@/components/uikit/image";
 
 const RightNavContainer = styled.div`
+  width: 60%;
   display: flex;
+  justify-content: flex-end;
   flex-flow: row nowrap;
+  align-items: center;
 
   a {
     margin: 0px 0px 0px 13px;
@@ -57,6 +61,34 @@ const RightNavContainer = styled.div`
     opacity: 1;
     transform: translateY(19.5px);
     cursor: default;
+  }
+
+  .profileButton {
+    width: auto;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding: 0% 0% 0% 15px;
+    border-left: 1px solid;
+  }
+
+  .profileButton:hover {
+    cursor: default !important;
+  }
+
+  .profileButton:hover:after {
+    opacity: 0;
+    transform: translateY(0px);
+    background-color: var(--black);
+  }
+
+  img {
+    transition: 0.2s all;
+  }
+
+  img:hover {
+    transform: scale(1.25);
+    cursor: pointer;
   }
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -162,7 +194,13 @@ export default function RightNav({ open }) {
         Contacto
       </Link>
       <NextLink href="/profile">
-        <a>{userData && userData.nombreyapellido}</a>
+        <a className="profileButton">
+          <Image
+            size="5"
+            imageLink={userData && userData.fotoperfil}
+            design="imagenPerfilHeader"
+          />
+        </a>
       </NextLink>
     </RightNavContainer>
   );
