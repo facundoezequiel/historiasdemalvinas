@@ -58,8 +58,18 @@ const ImageContainer = styled.img`
       border-radius: 200px 200px 200px 200px;
       -moz-border-radius: 200px 200px 200px 200px;
       -webkit-border-radius: 200px 200px 200px 200px;
-      border: 0px solid #000000;
     `}
+
+    ${(props) =>
+    props.design === "imagenPerfil" &&
+    css`
+      display: block;
+      border: 0px solid #000000;
+      border-radius: 200px 200px 200px 200px;
+      -moz-border-radius: 200px 200px 200px 200px;
+      -webkit-border-radius: 200px 200px 200px 200px;
+      object-fit: cover;
+    `}  
 
     ${(props) =>
     props.size === "5" &&
@@ -84,6 +94,14 @@ const ImageContainer = styled.img`
       display: block;
       object-fit: contain;
       width: 13%;
+    `}
+
+    ${(props) =>
+    props.size === "15" &&
+    css`
+      display: block;
+      width: 250px;
+      height: 250px;
     `}
 
     ${(props) =>

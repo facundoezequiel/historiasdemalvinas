@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import HomeSearch from "@/components/general/home/homesearch";
 import HomeProyecto from "@/components/general/home/homeproyecto";
@@ -17,34 +17,39 @@ const HomeContainer = styled.div`
 `;
 
 export default function Home() {
-  // const { userAuth, userData } = useAuthState();
-
+  const { userAuth, userData } = useAuthState();
   return (
     <HomeContainer>
-      <Headroom>
-        <Navbar />
-      </Headroom>
-      <Fade>
-        <HomeSearch />
-      </Fade>
-      <Fade duration={800}>
-        <HomeGrid />
-      </Fade>
-      <Fade duration={800}>
-        <HomeProyecto />
-      </Fade>
-      <Fade duration={800}>
-        <HomeGuerra />
-      </Fade>
-      <Fade duration={800}>
-        <HomeActualidad />
-      </Fade>
-      <Fade duration={800}>
-        <HomePlaneta />
-      </Fade>
-      <Fade duration={800}>
-        <HomeDonar />
-      </Fade>
+      {!userData && userAuth ? (
+        <a>hola</a>
+      ) : (
+        <>
+          <Headroom>
+            <Navbar />
+          </Headroom>
+          <Fade>
+            <HomeSearch />
+          </Fade>
+          <Fade duration={800}>
+            <HomeGrid />
+          </Fade>
+          <Fade duration={800}>
+            <HomeProyecto />
+          </Fade>
+          <Fade duration={800}>
+            <HomeGuerra />
+          </Fade>
+          <Fade duration={800}>
+            <HomeActualidad />
+          </Fade>
+          <Fade duration={800}>
+            <HomePlaneta />
+          </Fade>
+          <Fade duration={800}>
+            <HomeDonar />
+          </Fade>
+        </>
+      )}
     </HomeContainer>
   );
 }

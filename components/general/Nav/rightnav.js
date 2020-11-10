@@ -195,11 +195,19 @@ export default function RightNav({ open }) {
       </Link>
       <NextLink href="/profile">
         <a className="profileButton">
-          <Image
-            size="5"
-            imageLink={userData && userData.fotoperfil}
-            design="imagenPerfilHeader"
-          />
+          {!userData && userAuth ? (
+            <Image
+              size="5"
+              imageLink="/assets/images/placeholder/profile.png"
+              design="imagenPerfilHeader"
+            />
+          ) : (
+            <Image
+              size="5"
+              imageLink={userData && userData.fotoperfil}
+              design="imagenPerfilHeader"
+            />
+          )}
         </a>
       </NextLink>
     </RightNavContainer>

@@ -1,9 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const LoadingContainer = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @keyframes loading2 {
     0% {

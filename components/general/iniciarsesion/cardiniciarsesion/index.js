@@ -162,6 +162,8 @@ export default function CardInciarSesion() {
               design="iniciarSesion"
               onChange={(e) => handleChange("email", e.target.value)}
               value={formValue.email}
+              min={0}
+              oninput="validity.valid || (value='');"
             />
             {/* Input Contraseña */}
             <Input

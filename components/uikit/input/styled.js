@@ -32,9 +32,17 @@ const IconContainer = styled.div`
   -moz-border-radius: 8px 0px 0px 8px;
   -webkit-border-radius: 8px 0px 0px 8px;
   background-color: var(--gray);
-  color: #818689;
   margin: 8% 0% 0% 0%;
-  font-size: 1.1em;
+
+  .inputIcon {
+    width: 100%;
+    font-size: 1.1em;
+    color: #818689;
+  }
+
+  .inputIcon.focused {
+    color: var(--orange) !important;
+  }
 
   /* Props icon container */
   ${(props) =>
@@ -75,10 +83,7 @@ const InputContainer = styled.input`
 
   :focus-within {
     color: var(--orange) !important;
-  }
-
-  :hover ~ #svg {
-    color: var(--orange) !important;
+    font-size: 0.9em !important;
   }
 
   ::placeholder {
@@ -104,7 +109,7 @@ const InputContainer = styled.input`
     ${(props) =>
       props.design === "iniciarSesion" &&
       css`
-        font-size: 0.9em;
+        font-size: 0.9em !important;
       `}
   }
 `;

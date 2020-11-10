@@ -32,7 +32,7 @@ export default function Navbar() {
     <Nav>
       <div className="navContainer">
         <LogoButton
-          route="/"
+          route="/inicio"
           imageLink="./assets/logos/LogoHistoriasAzul.svg"
           size="125.2px"
         />
