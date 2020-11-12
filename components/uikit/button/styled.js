@@ -72,6 +72,45 @@ const ButtonContainer = styled.button`
     `}
 
   ${(props) =>
+    props.backgroundColor === "grayDeg" &&
+    css`
+      background: rgba(163, 163, 163, 1);
+      background: -moz-linear-gradient(
+        45deg,
+        rgba(163, 163, 163, 1) 0%,
+        rgba(235, 235, 235, 1) 100%
+      );
+      background: -webkit-gradient(
+        left bottom,
+        right top,
+        color-stop(0%, rgba(163, 163, 163, 1)),
+        color-stop(100%, rgba(235, 235, 235, 1))
+      );
+      background: -webkit-linear-gradient(
+        45deg,
+        rgba(163, 163, 163, 1) 0%,
+        rgba(235, 235, 235, 1) 100%
+      );
+      background: -o-linear-gradient(
+        45deg,
+        rgba(163, 163, 163, 1) 0%,
+        rgba(235, 235, 235, 1) 100%
+      );
+      background: -ms-linear-gradient(
+        45deg,
+        rgba(163, 163, 163, 1) 0%,
+        rgba(235, 235, 235, 1) 100%
+      );
+      background: linear-gradient(
+        45deg,
+        rgba(163, 163, 163, 1) 0%,
+        rgba(235, 235, 235, 1) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3a3a3', endColorstr='#ebebeb', GradientType=1 );
+      color: var(--black);
+    `}
+
+  ${(props) =>
     props.backgroundColor === "facebook" &&
     css`
       background-color: var(--bluefacebook);

@@ -10,6 +10,7 @@ import Input from "@/components/uikit/input";
 import Button from "@/components/uikit/button";
 import ParagraphLink from "@/components/uikit/paragraphlink";
 import Image from "@/components/uikit/image";
+import { default as NextLink } from "next/link";
 import { auth } from "@/lib/firebase";
 import {
   setUserCookie,
@@ -191,6 +192,17 @@ export default function CardInciarSesion() {
               icon={<FontAwesomeIcon icon={faFacebookSquare} />}
             />
           </form>
+          {/* Boton entrar como lector */}
+          <NextLink href="/inicio">
+            <a>
+              <Button
+                text="Entrar como lector"
+                backgroundColor="grayDeg"
+                design="iniciarSesion"
+                design="registro"
+              />
+            </a>
+          </NextLink>
           {/* Texto */}
           <ParagraphLink
             textLink="Registrarse"
