@@ -6,6 +6,9 @@ function Historias({ data }) {
   return (
     <div>
       <p>{data.titulo}</p>
+      <p>{data.usuario}</p>
+      <p>{data.descripcion}</p>
+      <p>{data.contenido}</p>
     </div>
   );
 }

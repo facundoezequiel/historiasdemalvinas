@@ -16,40 +16,34 @@ const HomeContainer = styled.div`
   width: 100% !important;
 `;
 
-export default function Home() {
+export default function Home({ dataCards }) {
   const { userAuth, userData } = useAuthState();
   return (
     <HomeContainer>
-      {!userData && userAuth ? (
-        <a>hola</a>
-      ) : (
-        <>
-          <Headroom>
-            <Navbar />
-          </Headroom>
-          <Fade>
-            <HomeSearch />
-          </Fade>
-          <Fade duration={800}>
-            <HomeGrid />
-          </Fade>
-          <Fade duration={800}>
-            <HomeProyecto />
-          </Fade>
-          <Fade duration={800}>
-            <HomeGuerra />
-          </Fade>
-          <Fade duration={800}>
-            <HomeActualidad />
-          </Fade>
-          <Fade duration={800}>
-            <HomePlaneta />
-          </Fade>
-          <Fade duration={800}>
-            <HomeDonar />
-          </Fade>
-        </>
-      )}
+      <Headroom>
+        <Navbar />
+      </Headroom>
+      <Fade>
+        <HomeSearch />
+      </Fade>
+      <Fade duration={800}>
+        <HomeGrid dataCards={dataCards} />
+      </Fade>
+      <Fade duration={800}>
+        <HomeProyecto />
+      </Fade>
+      <Fade duration={800}>
+        <HomeGuerra />
+      </Fade>
+      <Fade duration={800}>
+        <HomeActualidad />
+      </Fade>
+      <Fade duration={800}>
+        <HomePlaneta />
+      </Fade>
+      <Fade duration={800}>
+        <HomeDonar />
+      </Fade>
     </HomeContainer>
   );
 }
