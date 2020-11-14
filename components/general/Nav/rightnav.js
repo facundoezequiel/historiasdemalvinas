@@ -194,8 +194,8 @@ export default function RightNav({ open }) {
         Contacto
       </Link>
       <a className="profileButton">
-        {!userData && userAuth ? (
-          <NextLink href="/inicio">
+        {!userData && !userAuth ? (
+          <NextLink href="/">
             <a>Iniciar sesión</a>
           </NextLink>
         ) : (
@@ -203,7 +203,11 @@ export default function RightNav({ open }) {
             <a>
               <Image
                 size="5"
-                imageLink={userData && userData.fotoperfil}
+                imageLink={
+                  userData && userData.fotoperfil
+                    ? userData.fotoperfil
+                    : "/assets/images/placeholder/profile.png"
+                }
                 design="imagenPerfilHeader"
               />
             </a>

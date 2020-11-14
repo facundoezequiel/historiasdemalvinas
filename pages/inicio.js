@@ -28,6 +28,6 @@ export async function getServerSideProps() {
       console.log(error);
       return [];
     });
-  console.log(data, "31");
+  console.log("ACA ESTA", data);
   return { props: { data: data } };
 }

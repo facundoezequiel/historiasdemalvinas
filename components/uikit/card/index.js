@@ -15,12 +15,21 @@ import Paragraph from "@/components/uikit/paragraph";
 import Image from "@/components/uikit/image";
 import CardIcon from "@/components/uikit/cardicon";
 
-export default function Card({ cardImage, title, date, abstract, tag, user }) {
+export default function Card({
+  cardImage,
+  title,
+  date,
+  abstract,
+  tag,
+  user,
+  fotohistoria,
+  slug,
+}) {
   return (
     <CardContainer>
-      <Link href="/historia">
+      <Link href={`/historias/${slug}`}>
         <a>
-          <Image imageLink={cardImage} design="coverCard" />
+          <Image imageLink={fotohistoria} design="coverCard" />
           <Title level={3} texto={title}></Title>
           <div className="dateTagUserContainer">
             <div className="userContainer">

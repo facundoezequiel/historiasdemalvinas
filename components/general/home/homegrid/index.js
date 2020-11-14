@@ -5,7 +5,7 @@ import Title from "@/components/uikit/title";
 import Button from "@/components/uikit/button";
 
 export default function HomeGrid({ dataCards }) {
-  console.log(dataCards);
+  console.log("boca", dataCards);
   return (
     <HomeGridContainer name="historias">
       <section>
@@ -24,25 +24,27 @@ export default function HomeGrid({ dataCards }) {
             ></Button>
           </div>
         </div>
+        {dataCards.map((h) => {
+          return (
+            <Card
+              title={h.titulo}
+              date={h.fecha}
+              abstract={h.descripcion}
+              tag={h.categoria}
+              fotohistoria={h.fotohistoria}
+              user={h.usuario}
+              slug={h.slug}
+            />
+          );
+        })}
+        {/* 
         <Card
-          cardImage="/assets/images/card/Card1.png"
-          title={dataCards[0].titulo}
-          date="Sab, Oct 25, 2019"
-          abstract="El 11 de mayo dividieron a la compañía en dos: una parte iría a 
-            Puerto Howard, la otra a Monte Kent."
-          tag="Guerra"
-          userImage="/assets/images/profile/Profile1.jpg"
-          user="facundo.brahim"
-        />
-        <Card
-          cardImage="/assets/images/card/Card2.jpg"
-          title="El buque alemán SMS Scharnhorst"
-          date="Jue, Dic 5, 2019"
-          abstract="Ocurrió en diciembre de 1914, en los primeros meses de la Primera 
-            Guerra Mundial, cerca de las Islas Malvinas."
-          tag="Historia"
-          userImage="/assets/images/profile/Profile2.jpg"
-          user="sofia.hadjilias"
+          title={dataCards[1].titulo}
+          date={dataCards[1].fecha}
+          abstract={dataCards[1].descripcion}
+          tag={dataCards[1].categoria}
+          fotohistoria={dataCards[1].fotohistoria}
+          user={dataCards[1].usuario}
         />
         <Card
           cardImage="/assets/images/card/Card3.jpg"
@@ -104,6 +106,7 @@ export default function HomeGrid({ dataCards }) {
           userImage="/assets/images/profile/Profile8.jpg"
           user="gonzalo.rascon"
         />
+        */}
       </section>
     </HomeGridContainer>
   );
