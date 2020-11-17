@@ -40,6 +40,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "react-scroll": "^1.8.1",
+    "react-string-manipulator": "^1.0.12",
     "react-three-renderer": "^3.2.4",
     "react-three-renderer-objects": "0.0.6",
     "react-typed": "^1.2.0",

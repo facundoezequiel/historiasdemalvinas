@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-scroll";
-import * as Scroll from "react-scroll";
 import { default as NextLink } from "next/link";
 import { breakpoints } from "@/constants/media";
 import { useAuthState, useAuthDispatch, setUser } from "@/contexts/AuthContext";
@@ -136,68 +134,14 @@ const RightNavContainer = styled.div`
 
 export default function RightNav({ open }) {
   const { userAuth, userData } = useAuthState();
-  let scrollSpy = Scroll.scrollSpy;
-  useEffect(() => {
-    scrollSpy.update();
-  });
-
   return (
     <RightNavContainer open={open} className="navBar">
-      <Link
-        activeClass="active"
-        to="home"
-        smooth={true}
-        spy={true}
-        duration={500}
-      >
-        Inicio
-      </Link>
-      <Link
-        activeClass="active"
-        to="historias"
-        smooth={true}
-        spy={true}
-        duration={500}
-      >
-        Historias
-      </Link>
-      <Link
-        activeClass="active"
-        to="proyecto"
-        smooth={true}
-        spy={true}
-        duration={500}
-        offset={-50}
-      >
-        Proyecto
-      </Link>
-      <Link
-        activeClass="active"
-        to="comunidad"
-        smooth={true}
-        spy={true}
-        duration={500}
-      >
-        Comunidad
-      </Link>
-      <Link
-        activeClass="active"
-        to="donar"
-        smooth={true}
-        spy={true}
-        duration={500}
-      >
-        Donar
-      </Link>
-      <Link
-        activeClass="active"
-        to="contacto"
-        smooth={true}
-        spy={true}
-        duration={500}
-      >
-        Contacto
-      </Link>
+      <NextLink href="/inicio">Inicio</NextLink>
+      <NextLink href="/inicio">Historias</NextLink>
+      <NextLink href="/inicio">Proyecto</NextLink>
+      <NextLink href="/inicio">Comunidad</NextLink>
+      <NextLink href="/inicio">Donar</NextLink>
+      <NextLink href="/inicio">Contacto</NextLink>
       {!userData && !userAuth ? (
         <NextLink href="/">
           <a className="iniciarSesionButton">Iniciar sesión</a>

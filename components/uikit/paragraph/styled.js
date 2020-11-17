@@ -25,6 +25,12 @@ const ParagraphContainer = styled.p`
       font-size: 0.9em !important;
     `}
 
+  ${(props) =>
+    props.size === "1" &&
+    css`
+      font-size: 1em !important;
+    `}
+
   /* Design props */
   ${(props) =>
     props.design === "cardTitle" &&
@@ -88,6 +94,20 @@ const ParagraphContainer = styled.p`
       line-height: 26px;
       text-align: center;
       font-family: var(--inter);
+    `}
+
+    ${(props) =>
+    props.design === "historia" &&
+    css`
+      color: var(--black);
+      width: 100%;
+      font-weight: 400;
+      line-height: 32px;
+      letter-spacing: -0.003em;
+      text-align: left;
+      font-family: "Merriweather", serif;
+      white-space: pre-line;
+      margin-bottom: 35%;
     `}
 `;
 

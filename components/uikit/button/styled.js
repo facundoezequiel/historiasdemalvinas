@@ -158,7 +158,7 @@ const ButtonContainer = styled.button`
     ${(props) =>
     props.design === "homeGrid" &&
     css`
-      width: 35%;
+      width: 100%;
       margin: 0%;
       margin-left: 8% !important;
       padding: 4% 0% 4% 0%;

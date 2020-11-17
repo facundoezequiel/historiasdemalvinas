@@ -19,6 +19,7 @@ function MyApp({ Component, pageProps }) {
         <title>Historias de Malvinas</title>
         <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" />
       <FuegoProvider fuego={fuego}>
         <AuthProvider>
           <Layout>
