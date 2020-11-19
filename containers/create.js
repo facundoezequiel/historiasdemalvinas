@@ -17,7 +17,7 @@ export default function Create({ categorias }) {
   const [editorValue, setEditorValue] = useState();
   const [titleValue, setTitleValue] = useState({
     title: "",
-    date: "",
+    date: dayjs().format("DD/MM/YYYY"),
     category: "default",
     abstract: "prueba",
     user: "",
