@@ -6,7 +6,7 @@ import Paragraph from "@/components/uikit/paragraph";
 
 export default function HomeDonar() {
   return (
-    <DonarContainer name="donar">
+    <DonarContainer name="donar" id="Donar">
       <div className="titleTextContainer">
         <Title level={3} texto="Donaciones" />
         <Paragraph

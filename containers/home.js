@@ -42,7 +42,7 @@ export default function Home({ dataCards }) {
         <HomePlaneta />
       </Fade>
       <Fade duration={800}>
-        <HomeDonar id="Donar" />
+        <HomeDonar />
       </Fade>
     </HomeContainer>
   );

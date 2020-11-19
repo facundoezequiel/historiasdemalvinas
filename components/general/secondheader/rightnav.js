@@ -140,7 +140,7 @@ export default function RightNav({ open }) {
       <NextLink href="/inicio">Historias</NextLink>
       <NextLink href="/inicio">Proyecto</NextLink>
       <NextLink href="/inicio">Comunidad</NextLink>
-      <NextLink href="/inicio">Donar</NextLink>
+      <NextLink href="/inicio#Donar">Donar</NextLink>
       <NextLink href="/inicio">Contacto</NextLink>
       {!userData && !userAuth ? (
         <NextLink href="/">
