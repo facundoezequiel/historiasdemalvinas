@@ -1,45 +1,26 @@
 import React from "react";
-import { HomeGridContainer } from "./styled";
+import { HistoriasGridContainer } from "./styled";
 import Card from "@/components/uikit/card";
 import Title from "@/components/uikit/title";
 import Button from "@/components/uikit/button";
 import { useAuthState, useAuthDispatch, setUser } from "@/contexts/AuthContext";
 import { default as NextLink } from "next/link";
 
-export default function HomeGrid({ dataCards }) {
+export default function HistoriasGrid({ dataCards }) {
   const { userAuth, userData } = useAuthState();
   return (
-    <HomeGridContainer name="historias">
+    <HistoriasGridContainer>
       <section>
         <div className="titleButtonsContainer">
           <Title level={3} texto="Historias destacadas"></Title>
           <div className="gridButtons">
-            {!userData && !userAuth ? (
-              <NextLink href="/historias">
-                <Button
-                  text="Ver todas"
-                  backgroundColor="blue"
-                  design="homeGrid"
-                ></Button>
-              </NextLink>
-            ) : (
-              <>
-                <NextLink href="/historias">
-                  <Button
-                    text="Ver todas"
-                    backgroundColor="blue"
-                    design="homeGrid"
-                  ></Button>
-                </NextLink>
-                <NextLink href="/historias">
-                  <Button
-                    text="Nueva historia"
-                    backgroundColor="orange"
-                    design="homeGrid"
-                  ></Button>
-                </NextLink>
-              </>
-            )}
+            <NextLink href="/crear">
+              <Button
+                text="Nueva historia"
+                backgroundColor="orange"
+                design="homeGrid"
+              ></Button>
+            </NextLink>
           </div>
         </div>
         {dataCards.map((h) => {
@@ -49,13 +30,17 @@ export default function HomeGrid({ dataCards }) {
               date={h.fecha}
               abstract={h.descripcion}
               tag={h.categoria}
-              fotohistoria={h.fotohistoria}
+              fotohistoria={
+                h && h.fotohistoria
+                  ? h.fotohistoria
+                  : "/assets/images/placeholder/profile.png"
+              }
               user={h.usuario}
               slug={h.slug}
             />
           );
         })}
       </section>
-    </HomeGridContainer>
+    </HistoriasGridContainer>
   );
 }

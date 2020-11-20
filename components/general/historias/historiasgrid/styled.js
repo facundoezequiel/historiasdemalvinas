@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { breakpoints } from "@/constants/media";
 
 /* Principal container */
-const HomeGridContainer = styled.div`
+const HistoriasGridContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 6% 0% 2% 0%;
@@ -64,4 +64,4 @@ const HomeGridContainer = styled.div`
   }
 `;
 
-export { HomeGridContainer };
+export { HistoriasGridContainer };

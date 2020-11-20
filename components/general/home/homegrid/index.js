@@ -31,7 +31,7 @@ export default function HomeGrid({ dataCards }) {
                     design="homeGrid"
                   ></Button>
                 </NextLink>
-                <NextLink href="/historias">
+                <NextLink href="/crear">
                   <Button
                     text="Nueva historia"
                     backgroundColor="orange"

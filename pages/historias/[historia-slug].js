@@ -1,5 +1,4 @@
 import React from "react";
-import Story from "@/containers/story";
 import { db } from "@/lib/firebase";
 import styled, { css } from "styled-components";
 import SecondHeader from "@/components/general/secondheader/navbar";

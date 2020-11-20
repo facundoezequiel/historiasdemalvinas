@@ -3,7 +3,6 @@ import Home from "@/containers/home";
 import { db } from "@/lib/firebase";
 
 export default function Inicio({ data }) {
-  console.log(data, "line 6");
   return <Home dataCards={data} />;
 }
 
@@ -28,6 +27,5 @@ export async function getServerSideProps() {
       console.log(error);
       return [];
     });
-  console.log("ACA ESTA", data);
   return { props: { data: data } };
 }
