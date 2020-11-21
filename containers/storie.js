@@ -106,11 +106,7 @@ export default function Storie({ dataStorie, data }) {
       <SecondHeader />
       <HistoriaDataContainer>
         <Title texto={dataStorie.titulo} level={2} />
-        <Paragraph
-          size="1"
-          design="historia"
-          text={data.nombreyapellido}
-        ></Paragraph>
+        <Paragraph size="1" design="historia" text="Facundo Brahim"></Paragraph>
       </HistoriaDataContainer>
       {isAddAside ? (
         <aside className="userAside animate__animated animate__fadeIn">
@@ -172,26 +168,4 @@ export default function Storie({ dataStorie, data }) {
       </HistoriaImageAndText>
     </StorieContainer>
   );
-}
-
-export async function getServerSideProps() {
-  const ref = db.collection("usuarios");
-  const data = await ref
-    .where(id, "==", data.usuario)
-    .get()
-    .then((snapshot) => {
-      if (snapshot.empty) {
-        return [];
-      }
-      const dataToSend = [];
-      snapshot.forEach(async (doc) => {
-        dataToSend.push(await doc.data());
-      });
-      return dataToSend;
-    })
-    .catch((error) => {
-      console.log(error);
-      return [];
-    });
-  return { props: { data: data } };
 }
