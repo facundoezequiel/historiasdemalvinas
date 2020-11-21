@@ -28,7 +28,7 @@ const ParagraphContainer = styled.p`
   ${(props) =>
     props.size === "1" &&
     css`
-      font-size: 1em !important;
+      font-size: 1.08em !important;
     `}
 
   /* Design props */
@@ -101,8 +101,8 @@ const ParagraphContainer = styled.p`
     css`
       color: var(--black);
       width: 100%;
-      font-weight: 400;
-      line-height: 32px;
+      font-weight: 200;
+      line-height: 34px;
       letter-spacing: -0.003em;
       text-align: left;
       font-family: "Merriweather", serif;

@@ -12,7 +12,7 @@ export default function HistoriasGrid({ dataCards }) {
     <HistoriasGridContainer>
       <section>
         <div className="titleButtonsContainer">
-          <Title level={3} texto="Historias destacadas"></Title>
+          <Title level={3} texto="Historias de Malvinas"></Title>
           <div className="gridButtons">
             <NextLink href="/crear">
               <Button

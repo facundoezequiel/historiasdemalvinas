@@ -49,6 +49,7 @@
     "react-three-renderer": "^3.2.4",
     "react-three-renderer-objects": "0.0.6",
     "react-typed": "^1.2.0",
+    "react-waypoint": "^9.0.3",
     "styled-components": "^5.1.1",
     "three": "^0.119.1",
     "three.js": "^0.77.1",

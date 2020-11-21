@@ -25,6 +25,7 @@ export default async (req, res) => {
       .add({
         titulo: title,
         fecha: date,
+        categoria: category,
         contenido: content,
         descripcion: abstract,
         usuario: user,
