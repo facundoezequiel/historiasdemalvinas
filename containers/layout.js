@@ -7,15 +7,12 @@ export default function Layout({ children }) {
 
   const { userAuth, userData } = useAuthState();
 
-  console.log(userAuth);
-
   const { data, update, error } = useDocument(
     userAuth?.id ? `usuarios/${userAuth.id}` : null,
     {
       listen: true,
     }
   );
-  console.log(data);
 
   useEffect(() => {
     if (data) {
@@ -26,8 +23,6 @@ export default function Layout({ children }) {
       );
     }
   }, [data]);
-
-  console.log("User data", userData);
 
   return <>{children}</>;
 }

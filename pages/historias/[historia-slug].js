@@ -7,21 +7,20 @@ const HistoriaContainer = styled.div`
   width: 100% !important;
 `;
 
-export default function Historias({ data }) {
+export default function Historias({ data, dataUsuario }) {
   return (
     <HistoriaContainer>
-      <Storie dataStorie={data}></Storie>
+      <Storie dataStorie={data} dataUsuario={dataUsuario}></Storie>
     </HistoriaContainer>
   );
 }
 
 // Es unicamente utilizable en archivos dentro de pages
 export async function getServerSideProps({ params }) {
+  // DATA HISTORIA
   const slug = params["historia-slug"];
-  // Se hace para hacer la referencia una sola vez
   const ref = db.collection("historias");
   const data = await ref
-    // Para las destacadas, traigo las que son destacada == true
     .where("slug", "==", slug)
     .get()
     .then((snapshot) => {
@@ -38,6 +37,23 @@ export async function getServerSideProps({ params }) {
       console.log(error);
       return [];
     });
-  // Para las destacadas no pondria la posicion
-  return { props: { data: data[0] } };
+  // DARA USUARIOS
+  const userHistoriaRef = db.collection("usuarios").doc(data[0].usuario);
+  const userHistoriaData = await userHistoriaRef
+    .get()
+    .then((doc) => {
+      if (!doc.exists) {
+        console.log("no encuentra el doc");
+        return [];
+      } else {
+        console.log("Data usuario historia", doc.data());
+        return doc.data();
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      return [];
+    });
+  console.log("ID USER", userHistoriaData);
+  return { props: { data: data[0], dataUsuario: userHistoriaData } };
 }

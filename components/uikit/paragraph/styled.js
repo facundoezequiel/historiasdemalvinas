@@ -109,6 +109,32 @@ const ParagraphContainer = styled.p`
       white-space: pre-line;
       margin-bottom: 35%;
     `}
+
+    ${(props) =>
+    props.design === "historiaTitleCategoria" &&
+    css`
+      color: var(--black);
+      width: 100%;
+      font-weight: 200;
+      line-height: 34px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-align: left;
+      font-family: var(--inter);
+    `}
+
+    ${(props) =>
+    props.design === "historiaTitleDescripcion" &&
+    css`
+      color: var(--black);
+      width: 100%;
+      font-weight: 200;
+      line-height: 30px;
+      letter-spacing: 0.1em;
+      text-align: left;
+      font-family: "Merriweather", serif;
+      margin-top: 5%;
+    `}
 `;
 
 export { ParagraphContainer };

@@ -20,43 +20,48 @@ const StorieContainer = styled.div`
   }
 
   .userAside {
-    width: 15%;
+    width: 10%;
     margin: 0% 0% 0% 15%;
     top: 10%;
     float: left;
     position: sticky;
   }
+
   .removePointerEvents {
     pointer-events: none;
   }
+
   #displayNone {
     display: none;
   }
+
   #displayBlock {
     display: block !important;
   }
 `;
 
 const HistoriaDataContainer = styled.div`
-  width: 100%;
-  // background-color: var(--gray2);
-  padding: 2% 0% 2% 0%;
+  width: 35%;
+  padding: 3% 0% 2% 0%;
+  margin: 0 auto;
   background-color: var(--white);
-  // border-bottom: 1px solid var(--gray);
+
   h2 {
-    width: 35%;
-    margin: 0 auto;
+    margin-top: 3%;
     font-family: "Merriweather", serif !important;
+    font-weight: 300 !important;
+    font-size: 2.5em !important;
   }
 `;
 
 const HistoriaImageAndText = styled.div`
   width: 35%;
   margin: 0 auto;
+
   img {
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 0px 0px 0px 0px !important;
+    -moz-border-radius: 0px 0px 0px 0px !important;
+    -webkit-border-radius: 0px 0px 0px 0px !important;
     border: 0px solid #000000;
     // margin-top: 11%;
     // margin-bottom: 11%;
@@ -64,7 +69,7 @@ const HistoriaImageAndText = styled.div`
   }
 `;
 
-export default function Storie({ dataStorie, data }) {
+export default function Storie({ dataStorie, dataUsuario }) {
   // Defino que asideDisplay ni bien abro la pagina va a ser none para que no se vea el aside con el fadeOut;
   let asideDisplay = "displayNone";
   // Defino el state
@@ -99,7 +104,6 @@ export default function Storie({ dataStorie, data }) {
     }
   };
 
-  console.log("Hola", dataStorie.usuario);
   let addAsideScroll = 1170;
   let removeAsideScroll = 1169;
   let contenidoHistoria = dataStorie.contenido.replace(/\\n/g, "\n");
@@ -108,7 +112,17 @@ export default function Storie({ dataStorie, data }) {
     <StorieContainer>
       <SecondHeader />
       <HistoriaDataContainer>
+        <Paragraph
+          text={dataStorie.categoria}
+          size="0.9"
+          design="historiaTitleCategoria"
+        />
         <Title texto={dataStorie.titulo} level={2} />
+        <Paragraph
+          text={dataStorie.descripcion}
+          size="0.9"
+          design="historiaTitleDescripcion"
+        />
       </HistoriaDataContainer>
       {isAddAside ? (
         <aside className="userAside animate__animated animate__fadeIn">
@@ -119,7 +133,7 @@ export default function Storie({ dataStorie, data }) {
           ></Paragraph>
           <Paragraph
             size="1"
-            text={dataStorie.usuario}
+            text={dataUsuario.nombreyapellido}
             design="historia"
           ></Paragraph>
           <Paragraph
