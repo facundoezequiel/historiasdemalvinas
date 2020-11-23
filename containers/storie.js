@@ -10,6 +10,15 @@ import { Waypoint } from "react-waypoint";
 
 const StorieContainer = styled.div`
   width: 100% !important;
+
+  .animate__animated.animate__fadeIn {
+    --animate-duration: 300ms;
+  }
+
+  .animate__animated.animate__fadeOut {
+    --animate-duration: 300ms;
+  }
+
   .userAside {
     width: 15%;
     margin: 0% 0% 0% 15%;
@@ -91,8 +100,8 @@ export default function Storie({ dataStorie, data }) {
   };
 
   console.log("Hola", dataStorie.usuario);
-  let addAsideScroll = 1150;
-  let removeAsideScroll = 1149;
+  let addAsideScroll = 1170;
+  let removeAsideScroll = 1169;
   let contenidoHistoria = dataStorie.contenido.replace(/\\n/g, "\n");
 
   return (
