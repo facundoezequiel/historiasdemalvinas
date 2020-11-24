@@ -22,9 +22,9 @@ const StorieContainer = styled.div`
   .userAside {
     width: 10%;
     margin: 0% 0% 0% 15%;
-    top: 10%;
+    top: 15%;
     float: left;
-    position: sticky;
+    position: fixed;
   }
 
   .removePointerEvents {
@@ -63,9 +63,35 @@ const HistoriaImageAndText = styled.div`
     -moz-border-radius: 0px 0px 0px 0px !important;
     -webkit-border-radius: 0px 0px 0px 0px !important;
     border: 0px solid #000000;
-    // margin-top: 11%;
-    // margin-bottom: 11%;
-    margin: 5% 0% 11% 0%;
+    margin: 3% 0% 11% 0%;
+  }
+`;
+
+const HistoriaUserAndShare = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3%;
+
+  .shareButtonsContainer,
+  .imageNameDateContainer {
+    display: flex;
+    width: 50%;
+  }
+
+  .imageNameDateContainer {
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+      margin-right: 3%;
+    }
+  }
+
+  .shareButtonsContainer {
+    justify-content: flex-end;
   }
 `;
 
@@ -123,6 +149,53 @@ export default function Storie({ dataStorie, dataUsuario }) {
           size="0.9"
           design="historiaTitleDescripcion"
         />
+        <HistoriaUserAndShare>
+          <div className="imageNameDateContainer">
+            <Image
+              imageLink={
+                dataUsuario && dataUsuario.fotoperfil
+                  ? dataUsuario.fotoperfil
+                  : "/assets/images/placeholder/profile.png"
+              }
+              size="8"
+              design="imagenPerfil"
+            ></Image>
+            <div>
+              <Paragraph
+                text={dataUsuario.nombreyapellido}
+                design="historiaTitleUserDate"
+              />
+              <Paragraph
+                text={dataStorie.fecha}
+                size="0.9"
+                design="historiaTitleUserDate"
+              />
+            </div>
+          </div>
+          <div className="shareButtonsContainer">
+            <a
+              href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+              class="twitter-share-button"
+              data-size="large"
+              data-text={
+                "Hola! Te quiero compartir esta historia de " +
+                dataUsuario.nombreyapellido
+              }
+              data-via="historiasdemalvinas"
+              data-hashtags="NoLosOlvidamos"
+              data-related="historiasdemalvinas"
+              data-lang="es"
+              data-show-count="false"
+            >
+              Tweet
+            </a>
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
+        </HistoriaUserAndShare>
       </HistoriaDataContainer>
       {isAddAside ? (
         <aside className="userAside animate__animated animate__fadeIn">
@@ -159,7 +232,7 @@ export default function Storie({ dataStorie, dataUsuario }) {
           ></Paragraph>
           <Paragraph
             size="1"
-            text={dataStorie.usuario}
+            text={dataUsuario.nombreyapellido}
             design="historia"
           ></Paragraph>
           <Paragraph

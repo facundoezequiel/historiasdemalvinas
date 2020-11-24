@@ -128,11 +128,24 @@ const ParagraphContainer = styled.p`
     css`
       color: var(--black);
       width: 100%;
-      font-weight: 200;
+      font-weight: 600;
       line-height: 30px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.05em;
       text-align: left;
       font-family: "Merriweather", serif;
+      margin-top: 5%;
+    `}
+
+    ${(props) =>
+    props.design === "historiaTitleUserDate" &&
+    css`
+      color: var(--black);
+      width: 100%;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0.05em;
+      text-align: left;
+      font-family: var(--inter);
       margin-top: 5%;
     `}
 `;

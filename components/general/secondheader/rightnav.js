@@ -137,11 +137,10 @@ export default function RightNav({ open }) {
   return (
     <RightNavContainer open={open} className="navBar">
       <NextLink href="/inicio">Inicio</NextLink>
-      <NextLink href="/inicio">Historias</NextLink>
-      <NextLink href="/inicio">Proyecto</NextLink>
-      <NextLink href="/inicio">Comunidad</NextLink>
+      <NextLink href="/inicio#Historias">Historias</NextLink>
+      <NextLink href="/inicio#Proyecto">Proyecto</NextLink>
       <NextLink href="/inicio#Donar">Donar</NextLink>
-      <NextLink href="/inicio">Contacto</NextLink>
+      <NextLink href="/inicio#Donar">Contacto</NextLink>
       {!userData && !userAuth ? (
         <NextLink href="/">
           <a className="iniciarSesionButton">Iniciar sesión</a>

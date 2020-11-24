@@ -9,7 +9,7 @@ import { default as NextLink } from "next/link";
 export default function HomeGrid({ dataCards }) {
   const { userAuth, userData } = useAuthState();
   return (
-    <HomeGridContainer name="historias">
+    <HomeGridContainer name="historias" id="Historias">
       <section>
         <div className="titleButtonsContainer">
           <Title level={3} texto="Historias destacadas"></Title>

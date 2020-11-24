@@ -8,7 +8,7 @@ class HomeProyecto extends React.Component {
   state = {};
   render() {
     return (
-      <HomeProyectoContainer id="proyecto">
+      <HomeProyectoContainer id="Proyecto">
         <div className="textContainer">
           <Title
             level={3}

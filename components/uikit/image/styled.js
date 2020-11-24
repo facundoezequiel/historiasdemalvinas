@@ -81,6 +81,14 @@ const ImageContainer = styled.img`
     `}
 
     ${(props) =>
+    props.size === "8" &&
+    css`
+      display: block;
+      width: 50px;
+      height: 50px;
+    `}
+
+    ${(props) =>
     props.size === "10" &&
     css`
       display: block;

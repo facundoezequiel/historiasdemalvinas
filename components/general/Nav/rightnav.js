@@ -173,15 +173,6 @@ export default function RightNav({ open }) {
       </Link>
       <Link
         activeClass="active"
-        to="comunidad"
-        smooth={true}
-        spy={true}
-        duration={500}
-      >
-        Comunidad
-      </Link>
-      <Link
-        activeClass="active"
         to="donar"
         smooth={true}
         spy={true}

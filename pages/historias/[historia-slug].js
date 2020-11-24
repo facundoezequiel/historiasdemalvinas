@@ -54,6 +54,5 @@ export async function getServerSideProps({ params }) {
       console.log(error);
       return [];
     });
-  console.log("ID USER", userHistoriaData);
   return { props: { data: data[0], dataUsuario: userHistoriaData } };
 }
