@@ -141,6 +141,16 @@ export default function CardInciarSesion() {
       <div className="containerDiv2">
         {/* Data container */}
         <div className="containerDataDiv2 animate__animated animate__fadeIn">
+          {/* Logos Mobile */}
+          <div className="containerLogosMobile">
+            <Logo size="35" imageLink="./assets/logos/LogoHistoriasAzul.svg" />
+            <Logo
+              size="15"
+              imageLink="./assets/logos/IsologoDedicadoNegro.svg"
+            />
+          </div>
+          {/* Titulo Mobile */}
+          <h3 id="tituloMobile">Bienvenido</h3>
           {/* Texto */}
           <Paragraph
             size="0.8"

@@ -1,6 +1,5 @@
-/* FormularioBotones styled component document */
-/* Import styled */
 import styled from "styled-components";
+import { breakpoints } from "@/constants/media";
 
 const CardIniciarSesionContainer = styled.div`
   width: 100%;
@@ -21,11 +20,18 @@ const CardIniciarSesionContainer = styled.div`
     -webkit-align-items: center;
     -webkit-box-align: center;
     align-items: center;
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 
   .containerDiv1 {
     background-color: #fafafa;
     justify-content: flex-end;
+    @media (max-width: ${breakpoints.mobile}) {
+      display: none !important;
+    }
   }
 
   .containerDataDiv1 {
@@ -43,12 +49,38 @@ const CardIniciarSesionContainer = styled.div`
     width: 37%;
     min-width: 355.19px;
     margin: 0% 10% 0% 10%;
+    @media (max-width: ${breakpoints.mobile}) {
+      margin: 0 auto;
+    }
   }
 
   .containerLogos {
     width: 100%;
     display: flex;
     justify-content: space-between;
+  }
+
+  .containerLogosMobile {
+    display: none;
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 9%;
+    }
+  }
+
+  #tituloMobile {
+    display: none;
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 9%;
+      font-size: 1.8em;
+      margin: 0% 0% 12% 0%;
+      font-family: var(--inter);
+    }
   }
 
   h3 {

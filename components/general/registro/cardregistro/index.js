@@ -148,6 +148,14 @@ export default function CardRegistro() {
       <div className="containerDiv2">
         {/* Data container */}
         <div className="containerDataDiv2 animate__animated animate__fadeIn">
+          {/* Logos Mobile */}
+          <div className="containerLogosMobile">
+            <Logo size="35" imageLink="./assets/logos/LogoHistoriasAzul.svg" />
+            <Logo
+              size="15"
+              imageLink="./assets/logos/IsologoDedicadoNegro.svg"
+            />
+          </div>
           {/* Texto */}
           <Paragraph
             size="0.8"
@@ -226,8 +234,8 @@ export default function CardRegistro() {
               icon={<FontAwesomeIcon icon={faFacebookSquare} />}
               backgroundColor="blue"
               design="registro"
-              /* scope="public_profile,email"
-              onlogin="checkLoginState();" */
+            /* scope="public_profile,email"
+            onlogin="checkLoginState();" */
             />
           </form>
           {/* Texto */}
