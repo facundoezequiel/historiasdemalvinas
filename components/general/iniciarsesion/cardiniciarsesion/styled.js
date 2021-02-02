@@ -3,7 +3,7 @@ import { breakpoints } from "@/constants/media";
 
 const CardIniciarSesionContainer = styled.div`
   width: 100%;
-  background-color: var(--white);
+  background-color: var(--white) !important;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -51,6 +51,9 @@ const CardIniciarSesionContainer = styled.div`
     margin: 0% 10% 0% 10%;
     @media (max-width: ${breakpoints.mobile}) {
       margin: 0 auto;
+      width: 80%;
+      min-width: 0;
+      margin: 15% 10% 0% 10%;
     }
   }
 
@@ -60,13 +63,18 @@ const CardIniciarSesionContainer = styled.div`
     justify-content: space-between;
   }
 
-  .containerLogosMobile {
+  .containerHeaderMobile {
     display: none;
     @media (max-width: ${breakpoints.mobile}) {
-      width: 100%;
+      width: 80%;
+      min-width: 0;
+      padding: 10% 10% 3% 10%;
       display: flex;
       justify-content: space-between;
-      margin-bottom: 9%;
+      position: absolute;
+      top: 0%;
+      background-color: var(--white);
+      z-index: 99;
     }
   }
 
